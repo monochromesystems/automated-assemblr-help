@@ -1,0 +1,159 @@
+/* Automated Assemblr's panel (panel/catalogue-producer/*.njk) is drawn with main.css's .pt-* pieces alone: they are
+   the Catalogue Producer panel's own look, which the other InDesign and Photoshop panels share. */
+
+/* Catalogue pages as the plugin builds them (panel/catalogue-producer/spread-ui.njk, src/_lib/catalogue-art.js): the
+   hero's spread, and How it works's pages. A frame sets `--u`, one point of the page at the frame's width (`--units`,
+   the points it is wide), and everything in it is sized in points, so a page draws the same at any size. */
+.cs-frame { position: relative; container-type: inline-size; --u: calc(100cqw / var(--units)); text-align: left; }
+.cs-page { position: absolute; top: 0; bottom: 0; width: 50%; overflow: hidden; background: #fff; }
+.cs-page-left { left: 0; }
+.cs-page-right { left: 50%; }
+.cs-spread .cs-page { box-shadow: 0 calc(var(--u) * 4) calc(var(--u) * 18) rgba(0, 0, 0, 0.1); }
+/* The spine: a soft shade either side of the fold. */
+.cs-spread .cs-page::after { content: ""; position: absolute; top: 0; bottom: 0; width: calc(var(--u) * 22); pointer-events: none; }
+.cs-spread .cs-page-left::after { right: 0; background: linear-gradient(to left, rgba(0, 0, 0, 0.07), transparent); }
+.cs-spread .cs-page-right::after { left: 0; background: linear-gradient(to right, rgba(0, 0, 0, 0.07), transparent); }
+/* A page on its own (How it works): as wide as its frame. */
+.cs-alone .cs-page { position: relative; width: 100%; aspect-ratio: 595 / 842; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+/* The margins, in InDesign's margin-guide magenta. */
+.cs-margins { position: absolute; border: 1px solid #e7a6ec; pointer-events: none; }
+.cs-folio { position: absolute; bottom: calc(var(--u) * 22); font-size: calc(var(--u) * 8); color: #999; }
+.cs-page-left .cs-folio { left: calc(var(--u) * 30); }
+.cs-page-right .cs-folio { right: calc(var(--u) * 30); }
+
+.cs-cell { position: absolute; }
+.cs-product { display: flex; flex-direction: column; }
+.cs-img { position: relative; flex: none; background: #f3f3f3; }
+.cs-img img { position: absolute; display: block; max-width: none; }
+.cs-badge { position: absolute; display: grid; place-items: center; border-radius: 50%; background: #111; font-size: calc(var(--u) * 10.5); font-weight: 700; letter-spacing: 0.04em; color: #fff; }
+.cs-device { position: absolute; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2)); }
+.cs-device svg { display: block; width: 100%; height: 100%; font-family: var(--font); }
+.cs-copy { flex: 1; min-height: 0; padding-top: calc(var(--u) * 7); }
+.cs-copy p { margin: 0; line-height: 1.25; }
+.cs-name { font-size: calc(var(--u) * 10.5); font-weight: 700; color: #111; }
+.cs-pack { font-size: calc(var(--u) * 8.5); color: #666; }
+.cs-price { margin-top: calc(var(--u) * 3) !important; font-size: calc(var(--u) * 10.5); font-weight: 700; color: #111; }
+
+/* A table insert, filled from its own sheet and styled by its design. */
+.cs-table { padding-top: calc(var(--u) * 6); }
+.cs-table-title { margin: 0 0 calc(var(--u) * 8); font-size: calc(var(--u) * 13); font-weight: 700; color: #111; }
+.cs-table table { width: 100%; border-collapse: collapse; font-size: calc(var(--u) * 8.5); color: #333; }
+.cs-table th { padding: calc(var(--u) * 4) calc(var(--u) * 6); background: #111; font-weight: 600; text-align: left; color: #fff; }
+.cs-table td { padding: calc(var(--u) * 3.6) calc(var(--u) * 6); border-bottom: 1px solid #e6e6e6; }
+.cs-table td:last-child, .cs-table th:last-child { text-align: right; }
+
+/* An advert insert: a placed file, here a dark one with two black cans in it, the left one in front and the other behind
+   it on the right, smaller and higher as one further back is (the owner, 2026-11-02). */
+.cs-ad { display: flex; flex-direction: column; justify-content: center; padding: 0 calc(var(--u) * 26); overflow: hidden; color: #fff;
+  background: url("../../img/can-black.webp") no-repeat right 30% top 60% / auto 99%, url("../../img/can-black.webp") no-repeat right 9% top 0% / auto 81%, radial-gradient(circle at 75% 60%, #2b2b2b, #0d0d0d 70%); }
+.cs-ad p { margin: 0; }
+.cs-ad-title { font-size: calc(var(--u) * 34); font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+.cs-ad-sub { margin-top: calc(var(--u) * 8) !important; font-size: calc(var(--u) * 12); color: #a7adb6; }
+
+/* The hero: the spread on a pasteboard, its features as labels, each a line to what it is about. On a phone it pans
+   rather than shrinking past reading. */
+.cs-hero { margin: 64px 0 0; padding: 44px 140px; border-radius: var(--radius); background: #ebebeb; }
+.cs-leads { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.cs-leads line { stroke: var(--signal); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.cs-leads circle { fill: var(--signal); stroke: #fff; stroke-width: 2; vector-effect: non-scaling-stroke; }
+.cs-features { margin: 0; padding: 0; list-style: none; }
+.cs-feature { position: absolute; width: max-content; max-width: 124px; padding: 5px 10px; border-radius: 12px; background: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.05); font-size: clamp(10.5px, calc(var(--u) * 13), 13px); font-weight: 500; line-height: 1.3; color: #111; transform: translateY(-50%); }
+.cs-feature-left { transform: translate(-100%, -50%); }
+.cs-feature-centre { transform: translate(-50%, -50%); text-align: center; }
+.cs-feature-wide { max-width: none; white-space: nowrap; }
+/* A label in blue: what the spread is about. */
+.cs-feature-special { background: var(--signal); color: #fff; font-weight: 600; box-shadow: 0 2px 12px rgba(51, 114, 246, 0.35); }
+/* Below a laptop's width it pans, at a width its labels have room in, rather than shrinking past reading. */
+@media (max-width: 1068px) {
+  .cs-hero { margin-top: 48px; padding: 36px 0; }
+  .cs-scroll { overflow-x: auto; padding: 0 140px; scrollbar-width: none; }
+  .cs-scroll::-webkit-scrollbar { display: none; }
+  .cs-spread { width: 860px; }
+}
+
+/* How it works (panel/catalogue-producer/how-*.njk). A ghost page: what is in its cells faded, each cell a thick blue
+   box over it. */
+.cs-ghost .cs-cell { opacity: 0.28; }
+.cs-slot { position: absolute; border: max(2px, calc(var(--u) * 6)) solid var(--signal); border-radius: max(1px, calc(var(--u) * 3)); pointer-events: none; }
+/* A joined cell: one box over the cells it takes, a dashed line where they met, and its span. */
+.cs-join { position: absolute; }
+.cs-join-x { top: 8%; bottom: 8%; border-left: 1px dashed var(--signal); }
+.cs-join-y { left: 8%; right: 8%; border-top: 1px dashed var(--signal); }
+.cs-joined { position: absolute; top: 0; left: 0; padding: 2px 5px 2px 3px; border-radius: 0 0 4px 0; background: var(--signal); font-size: 8.5px; font-weight: 700; line-height: 1.2; letter-spacing: 0.02em; color: #fff; }
+/* A page with bleed: its advert runs past the page's outer edges, to the bleed guide, in InDesign's red. */
+.cs-page-bleed { overflow: visible; }
+.cs-ad-bleed { justify-content: flex-start; padding: calc(var(--u) * 90) calc(var(--u) * 44);
+  background: url("../../img/can-black.webp") no-repeat 36% 88% / auto 41.4%, url("../../img/can-black.webp") no-repeat 63.5% 76% / auto 35.1%, radial-gradient(circle at 50% 75%, #2e2e2e, #0d0d0d 70%); }
+.cs-ad-bleed .cs-ad-title { font-size: calc(var(--u) * 60); }
+.cs-ad-bleed .cs-ad-sub { font-size: calc(var(--u) * 18); }
+.cs-bleed { position: absolute; z-index: 1; border: 1px solid #f05b5b; pointer-events: none; }
+.cw-margins { width: 100%; max-width: 560px; }
+.cw-margins .cs-margins { border-width: 1.5px; border-color: #d36ad9; }
+
+/* Built from the brief: the sheet, the folders and the cell, side by side, arrows between; one above the other when
+   narrow. The Duo pack's row, files and cell in blue. */
+.cw-brief { display: grid; grid-template-columns: minmax(0, 1.35fr) auto minmax(0, 1fr) auto minmax(0, 0.7fr); align-items: center; gap: 16px; width: 100%; max-width: 1060px; }
+.cw-side { min-width: 0; }
+.cw-sheet { width: 100%; border-collapse: collapse; background: #fff; font-size: 11.5px; color: #222; box-shadow: 0 0 0 1px #dcdcdc; }
+.cw-sheet th, .cw-sheet td { height: 24px; padding: 0 8px; border: 1px solid #e3e3e3; white-space: nowrap; text-align: left; }
+.cw-sheet thead th, .cw-sheet tbody th { background: #f3f3f3; font-weight: 500; color: #888; text-align: center; }
+.cw-sheet thead th:first-child, .cw-sheet tbody th { width: 26px; padding: 0; }
+.cw-sheet-head td { font-weight: 700; }
+.cw-sheet tr.is-on td { background: #e8effd; }
+.cw-sheet tr.is-on td:first-of-type { box-shadow: inset 2px 0 0 var(--signal); }
+.cw-files { margin: 0; padding: 4px 0; list-style: none; border-radius: 8px; background: #fff; box-shadow: 0 0 0 1px #dcdcdc; font-size: 11.5px; color: #222; }
+.cw-files li { display: flex; align-items: center; gap: 8px; height: 28px; padding: 0 10px; white-space: nowrap; }
+.cw-files li.is-on { background: #e8effd; }
+.cw-file-img { display: grid; place-items: center; flex: none; width: 18px; height: 22px; border-radius: 3px; background: #f0f0f0; }
+.cw-file-img img { height: 19px; width: auto; }
+.cw-file-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.cw-cell { width: 100%; max-width: 210px; background: #fff; box-shadow: 0 0 0 1px #dcdcdc; }
+.cw-cell .cs-img { box-shadow: inset 0 0 0 2px var(--signal); }
+@container (max-width: 760px) {
+  .cw-brief { grid-template-columns: minmax(0, 1fr); justify-items: center; }
+  .cw-brief .cw-side { width: 100%; max-width: 420px; }
+  .cw-brief .cw-side-cell { max-width: 220px; }
+  .cw-brief .hw-go { padding-top: 0; }
+  .cw-brief .hw-go-arrow { width: 26px; transform: rotate(90deg); }
+}
+
+/* A live grid: the page before and after, side by side. */
+.cw-pages { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 14px; width: 100%; max-width: 520px; }
+.cw-pages .cs-alone { max-width: 230px; margin-inline: auto; }
+/* A label on a page shown this small: two short lines. */
+.cw-pages .cs-feature { max-width: 96px; }
+
+/* Products by Assemblr: the cell, labelled. */
+.cw-anat { width: 100%; max-width: 530px; }
+.cw-anat .cs-feature { max-width: max(92px, calc(var(--u) * 190)); }
+.cw-anat .cs-product { background: #fff; box-shadow: 0 0 0 1px #dcdcdc; }
+
+/* The product list: the Catalogue tile's rows, a product and a can lifted, blue lines where they land. */
+.cw-list { width: 100%; max-width: 420px; padding: 14px 16px 10px; border-radius: 14px; background: #fff; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 6px 20px rgba(0, 0, 0, 0.06); font-size: 12.5px; color: #222; text-align: left; }
+.cw-list-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+.cw-list-title { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #666; }
+.cw-chips { display: flex; gap: 4px; }
+.cw-chips span { padding: 3px 8px; border-radius: 5px; background: #f1f1f1; font-size: 11px; white-space: nowrap; }
+.cw-chips .is-on { background: #111; color: #fff; }
+.cw-row { position: relative; display: grid; gap: 6px; padding: 8px 0; border-bottom: 1px solid #eee; background: #fff; }
+.cw-row.is-lifted { z-index: 1; margin: 0 -6px; padding: 8px 6px; border-radius: 8px; border-bottom-color: transparent; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.05); transform: translate(10px, -26px) rotate(-1deg); }
+.cw-drop { position: relative; z-index: 1; height: 2px; margin: -1px 0; border-radius: 1px; background: var(--signal); }
+.cw-prow { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.cw-n { width: 14px; color: #999; }
+.cw-code { font-weight: 600; }
+.cw-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cw-tag { padding: 1px 5px; border-radius: 3px; background: #efefef; font-size: 9.5px; font-weight: 700; letter-spacing: 0.06em; color: #666; }
+.cw-strip { display: flex; align-items: center; gap: 5px; padding-left: 22px; }
+.cw-thumb { position: relative; display: grid; place-items: center; flex: none; width: 34px; height: 38px; border-radius: 5px; background: #f0f0f0; }
+.cw-thumb img { height: 26px; width: auto; margin-top: -6px; }
+.cw-thumb span { position: absolute; bottom: 2px; font-size: 7.5px; font-weight: 600; letter-spacing: 0.04em; color: #888; }
+.cw-thumb.is-lifted { z-index: 1; background: #fff; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 0 0 1.5px var(--signal); transform: translate(-6px, -10px) rotate(-4deg); }
+.cw-insert { flex: none; width: 2px; height: 38px; border-radius: 1px; background: var(--signal); }
+.cw-add { border: 1px dashed #c8c8c8; background: none; font-size: 16px; color: #999; }
+/* Narrow: the filters drop to their own line, and a long strip wraps. */
+@container (max-width: 400px) {
+  .cw-list { padding: 12px 12px 8px; }
+  .cw-list-head { flex-wrap: wrap; }
+  .cw-strip { flex-wrap: wrap; padding-left: 0; }
+  .cw-row.is-lifted { transform: translate(6px, -22px) rotate(-1deg); }
+}
