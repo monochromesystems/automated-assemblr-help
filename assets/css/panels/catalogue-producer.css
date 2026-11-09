@@ -42,10 +42,14 @@
 .cs-table td { padding: calc(var(--u) * 3.6) calc(var(--u) * 6); border-bottom: 1px solid #e6e6e6; }
 .cs-table td:last-child, .cs-table th:last-child { text-align: right; }
 
-/* An advert insert: a placed file, here a dark one with two black cans in it, the left one in front and the other behind
-   it on the right, smaller and higher as one further back is (the owner, 2026-11-02). */
+/* An advert insert: a placed file, here a dark one with all ten example objects in a pyramid on its right. */
 .cs-ad { display: flex; flex-direction: column; justify-content: center; padding: 0 calc(var(--u) * 26); overflow: hidden; color: #fff;
-  background: url("../../img/can-black.webp") no-repeat right 30% top 60% / auto 99%, url("../../img/can-black.webp") no-repeat right 9% top 0% / auto 81%, radial-gradient(circle at 75% 60%, #2b2b2b, #0d0d0d 70%); }
+  position: relative; background: radial-gradient(circle at 75% 60%, #2b2b2b, #0d0d0d 70%); }
+.cs-ad > p { position: relative; z-index: 1; }
+/* The pyramid: four rows, one to four across, each row riding up a little over the one below. */
+.cs-pyr { position: absolute; right: 0; top: 14%; width: 48%; height: 80%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.cs-pyr-row { display: flex; justify-content: center; align-items: flex-end; margin-top: -9%; }
+.cs-pyr-row img { display: block; width: auto; margin: 0 -4%; }
 .cs-ad p { margin: 0; }
 .cs-ad-title { font-size: calc(var(--u) * 34); font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
 .cs-ad-sub { margin-top: calc(var(--u) * 8) !important; font-size: calc(var(--u) * 12); color: #a7adb6; }
@@ -83,7 +87,8 @@
 /* A page with bleed: its advert runs past the page's outer edges, to the bleed guide, in InDesign's red. */
 .cs-page-bleed { overflow: visible; }
 .cs-ad-bleed { justify-content: flex-start; padding: calc(var(--u) * 90) calc(var(--u) * 44);
-  background: url("../../img/can-black.webp") no-repeat 36% 88% / auto 41.4%, url("../../img/can-black.webp") no-repeat 63.5% 76% / auto 35.1%, radial-gradient(circle at 50% 75%, #2e2e2e, #0d0d0d 70%); }
+  background: radial-gradient(circle at 50% 75%, #2e2e2e, #0d0d0d 70%); }
+.cs-ad-bleed .cs-pyr { right: 15%; top: auto; bottom: 15%; width: 70%; height: 44%; }
 .cs-ad-bleed .cs-ad-title { font-size: calc(var(--u) * 60); }
 .cs-ad-bleed .cs-ad-sub { font-size: calc(var(--u) * 18); }
 .cs-bleed { position: absolute; z-index: 1; border: 1px solid #f05b5b; pointer-events: none; }
