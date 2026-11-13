@@ -1118,11 +1118,68 @@ a.tile:hover .tile-photo { --lift: 1.05; }
   .bento-title { font-size: 23px; }
 }
 
+/* A product's pricing (product-page.njk): a plan a row, what it gets under its name, a price a column;
+   a card a plan on a phone. */
+.pricing-intro { max-width: 720px; margin: -8px 0 36px; font-size: 19px; line-height: 1.45; color: var(--fg-2); }
+.pricing { width: 100%; border-collapse: collapse; border-top: 1px solid var(--fg); text-align: left; }
+.pricing th, .pricing td { padding: 22px 16px 22px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.pricing thead th { font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--fg-3); }
+.pricing thead th small { display: block; margin-top: 4px; font-size: 13px; font-weight: 400; letter-spacing: 0; text-transform: none; }
+.pricing thead th:first-child { width: 34%; }
+.pricing tbody th { font-size: 19px; font-weight: 600; letter-spacing: -0.014em; }
+.pricing tbody th small { display: block; max-width: 440px; margin-top: 6px; font-size: 14.5px; font-weight: 400; line-height: 1.45; letter-spacing: 0; color: var(--fg-2); }
+.pricing td { font-size: 19px; font-weight: 500; letter-spacing: -0.014em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pricing-note { max-width: 720px; margin-top: 20px; font-size: 14.5px; line-height: 1.5; color: var(--fg-3); }
+@media (max-width: 734px) {
+  .pricing thead { display: none; }
+  .pricing, .pricing tbody, .pricing tr, .pricing th, .pricing td { display: block; }
+  .pricing tr { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .pricing th, .pricing td { padding: 0; border: 0; }
+  .pricing td { display: flex; justify-content: space-between; margin-top: 10px; font-size: 17px; }
+  .pricing td[data-label]::before { content: attr(data-label); font-size: 14px; font-weight: 500; color: var(--fg-3); }
+}
+
 .specs { border-top: 1px solid var(--fg); }
 .specs-row { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--line); }
 .specs dt { font-size: 12px; line-height: 1.33; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--fg-3); padding-top: 5px; }
 .specs dd { font-size: 19px; font-weight: 500; letter-spacing: -0.014em; font-variant-numeric: tabular-nums; }
 @media (max-width: 734px) { .specs-row { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; } .specs dt { padding-top: 0; } }
+
+/* The full feature list under the specs (product-page.njk): the specs' grid, a group's name on the left and its
+   features down the right, each its name over what it does. */
+.feat-title { margin: 96px 0 0; font-size: 32px; font-weight: 600; letter-spacing: -0.02em; }
+.feat-intro { max-width: 720px; margin: 12px 0 0; font-size: 17px; line-height: 1.5; color: var(--fg-2); }
+.feat { margin-top: 32px; border-top: 1px solid var(--fg); }
+.feat-group { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+.feat-group h3, .feat-group h4 { margin: 0; padding-top: 4px; font-size: 12px; line-height: 1.33; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--fg-3); }
+.feat-group dl { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 32px; margin: 0; }
+.feat-row dt { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+.feat-row dd { margin: 4px 0 0; font-size: 14.5px; line-height: 1.45; color: var(--fg-2); }
+/* The AI's capabilities by plan: a capability a row (an example of asking for it under its name), a plan a column,
+   a tick, a dash or a few words in each. */
+.aitable { width: 100%; margin-top: 32px; border-collapse: collapse; border-top: 1px solid var(--fg); text-align: left; }
+.aitable th, .aitable td { padding: 20px 16px 20px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.aitable thead th { font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--fg-3); }
+.aitable thead th:first-child { width: 50%; }
+.aitable tbody th { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+.aitable tbody th small { display: block; max-width: 460px; margin-top: 5px; font-size: 14px; font-weight: 400; font-style: italic; line-height: 1.45; letter-spacing: 0; color: var(--fg-3); }
+.aitable td { font-size: 14.5px; line-height: 1.45; color: var(--fg-2); }
+.ai-tick, .ai-none { display: inline-block; vertical-align: middle; }
+.ai-tick { width: 14px; height: 8px; margin: 4px 0 0 2px; border: solid var(--fg); border-width: 0 0 2px 2px; transform: rotate(-45deg); }
+.ai-none { width: 12px; height: 2px; margin-top: 10px; background: var(--fg-3); opacity: 0.6; }
+@media (max-width: 734px) {
+  .aitable thead { display: none; }
+  .aitable, .aitable tbody, .aitable tr, .aitable th, .aitable td { display: block; }
+  .aitable tr { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .aitable th, .aitable td { padding: 0; border: 0; }
+  .aitable td { display: flex; justify-content: space-between; gap: 16px; margin-top: 8px; text-align: right; }
+  .aitable td::before { content: attr(data-label); flex: none; font-size: 13px; font-weight: 500; color: var(--fg-3); text-align: left; }
+}
+@media (max-width: 734px) {
+  .feat-title { margin-top: 64px; font-size: 26px; }
+  .feat-group { grid-template-columns: 1fr; gap: 14px; padding: 22px 0; }
+  .feat-group dl { grid-template-columns: 1fr; gap: 16px; }
+}
 
 .section-cta { padding-top: 0; text-align: center; }
 
@@ -1641,7 +1698,7 @@ a.tile:hover .tile-photo { --lift: 1.05; }
 @media (max-width: 734px) { .hp-hero { padding-bottom: 48px; } }
 /* A group a heading, its items as cards, three across; a card's steps numbered in blue, as the panel's notes are, and
    its ways (`or`) dotted. */
-.hp-group + .hp-group { margin-top: 72px; }
+.hp-group + .hp-group, .hp-then { margin-top: 72px; }
 .hp-name { margin-bottom: 24px; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em; }
 .hp-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
 .hp-item { padding: 24px 26px 26px; border-radius: var(--radius); background: var(--card); scroll-margin-top: 96px; }
@@ -1663,6 +1720,12 @@ a.tile:hover .tile-photo { --lift: 1.05; }
 .hp-big-points dt { margin-bottom: 3px; font-size: 15px; font-weight: 600; }
 .hp-big-points dd { margin: 0; font-size: 15px; line-height: 1.45; color: var(--fg-2); }
 @media (max-width: 734px) { .hp-big { padding: 22px 20px 24px; } .hp-big-points { grid-template-columns: minmax(0, 1fr); } }
+/* A card of steps the whole row wide (an item with `wide`), its steps in two columns, read down then across. */
+.hp-wide { grid-column: 1 / -1; padding: 30px 32px 32px; }
+.hp-wide .hp-q { font-size: 22px; letter-spacing: -0.02em; margin-bottom: 16px; }
+.hp-wide .hp-steps { display: block; columns: 2; column-gap: 40px; }
+.hp-wide .hp-steps > li { break-inside: avoid; margin-bottom: 10px; }
+@media (max-width: 734px) { .hp-wide { padding: 22px 20px 24px; } .hp-wide .hp-steps { columns: 1; } }
 
 /* Price designs (panel/shared/price-devices.njk): the sets' folders beside one design's layers coming together and
    placed on a product. White, whatever the band. */
@@ -1705,6 +1768,57 @@ a.tile:hover .tile-photo { --lift: 1.05; }
 @media (max-width: 834px) { .pd { grid-template-columns: minmax(0, 1fr); } }
 .pd-scroll { min-width: 0; }
 @media (max-width: 734px) { .pd-scroll { overflow-x: auto; scrollbar-width: none; } .pd-scroll::-webkit-scrollbar { display: none; } .pd-place { min-width: 560px; } }
+
+/* Automated Assemblr's overlay folders (panel/catalogue-producer/price-folders.njk): a job's folder tree, each folder
+   with the panel's button that links it, beside four pages whose prices come from the folder each corner chose. Built
+   on the price designs' card and its file rows. */
+.pf { grid-template-columns: minmax(0, 360px) minmax(0, 1fr); }
+.pf-tree { font-size: 13px; }
+.pf-tree ul { margin: 0; padding: 0; list-style: none; }
+.pf-in { display: flex; flex-direction: column; gap: 4px; margin: 4px 0 6px 8px !important; padding-left: 16px !important; border-left: 1px solid #e3e5e9; }
+.pf-row { display: flex; align-items: center; gap: 8px; margin: 0; min-height: 21px; }
+.pf-folder { font-weight: 600; }
+.pf-name { flex: 1; }
+.pf-root .pf-name { font-size: 14px; }
+.pf-btn { flex: none; padding: 1px 7px; border: 1px solid #d5d8de; border-radius: 6px; font-size: 11px; font-weight: 500; color: #555; white-space: nowrap; }
+.pf-row .pd-file { flex: 1; }
+.pf-sheet-icon { flex: none; width: 15px; height: 17px; fill: #e6f3ea; stroke: #2e9e57; stroke-width: 1.2; }
+.pf-sheet-grid { fill: none; }
+.pf-badge-icon { flex: none; width: 34px; font-size: 13px; line-height: 1; text-align: center; color: #f0287a; }
+.pf-pages { display: block; width: 100%; height: auto; overflow: visible; font-family: inherit; }
+.pf-chip { font-size: 9px; font-weight: 800; text-anchor: middle; }
+.pd-regular .pf-chip { fill: #111; } .pd-sale .pf-chip { fill: #fff; }
+.pf-mid { text-anchor: middle; }
+.pf-own { fill: none; stroke: var(--signal); stroke-width: 1.5; }
+.pf-num { fill: #888; font-size: 11px; text-anchor: middle; }
+.pf-cap { fill: #111; font-size: 12px; font-weight: 500; text-anchor: start; }
+.pf-cap-scope { font-weight: 700; }
+.pf-lead { fill: none; stroke: var(--signal); stroke-width: 1.2; }
+.pf-brace { fill: none; stroke: #b9bec7; stroke-width: 1.2; }
+.pf-swatch-regular { fill: #ffd60a; } .pf-swatch-sale { fill: #e5322d; }
+@media (max-width: 834px) { .pf { grid-template-columns: minmax(0, 1fr); } }
+
+/* A job's files (panel/catalogue-producer/job-folders.njk): the folder tree of the overlay folders' card, its images
+   named by code, beside the brief drawn as a small sheet with a note on each column it reads. */
+.jf { grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: start; }
+.jf-pic { flex: none; width: 15px; height: 12px; border-radius: 2px; background: linear-gradient(135deg, #c9d7ef, #8fb3f9); }
+.jf-sub { font-weight: 500; }
+.jf-off { font-weight: 500; color: #aaa; } .jf-off .pd-folder-icon { fill: #d5d8de; }
+.jf-note { margin: -2px 0 2px 26px; font-size: 12px; color: #888; }
+.jf-book { font-size: 12px; }
+.jf-book-name { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font-family: var(--font-mono); font-size: 12px; }
+.jf-sheet { width: 100%; border-collapse: collapse; font-size: 12px; }
+.jf-sheet th, .jf-sheet td { padding: 5px 8px; border: 1px solid #e3e5e9; text-align: left; vertical-align: top; }
+.jf-sheet th { width: 22px; background: #f2f2f3; font-weight: 500; color: #888; text-align: center; }
+.jf-title td { font-weight: 600; color: #555; }
+.jf-head td { background: #f7f7f8; font-weight: 600; }
+.jf-key { background: rgba(51, 114, 246, 0.07); }
+.jf-head .jf-key { background: rgba(51, 114, 246, 0.14); color: var(--signal); }
+.jf-notes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 20px; margin: 12px 0 0; padding: 0; list-style: none; color: #555; }
+.jf-n { font-weight: 600; color: #111; }
+@media (max-width: 834px) { .jf { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 734px) { .jf-book { min-width: 520px; } .jf-notes { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 734px) { .pf-pages { min-width: 520px; } }
 
 @media (max-width: 1068px) { .hp-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 734px) {

@@ -389,6 +389,151 @@ function initPanelTours() {
   }
 }
 
+/* A spread made as you scroll (Automated Assemblr's build.njk) ------------- */
+
+// The spread is held at the top of the window and its steps scroll up under it. The step that has risen past the
+// middle of the half under the spread is the current one: the frame gets s1 … sN for every step reached, the step
+// is-current, and the spread's caption its number and its `data-cap`. Scrolling back takes them off again.
+function initBuilds() {
+  for (const root of document.querySelectorAll("[data-build]")) {
+    const frame = root.querySelector(".cb-frame"), stage = root.querySelector(".cb-stage");
+    const steps = [...root.querySelectorAll("[data-step]")];
+    const capN = root.querySelector(".cb-cap-n"), capT = root.querySelector(".cb-cap-t");
+    let at = -1, queued = false;
+    const update = () => {
+      queued = false;
+      const below = stage.getBoundingClientRect().bottom;
+      const line = below + (innerHeight - below) * 0.45;
+      let n = 0;
+      steps.forEach((s) => { if (s.getBoundingClientRect().top <= line) n = Number(s.dataset.step); });
+      if (n === at) return;
+      at = n;
+      for (let k = 1; k < steps.length; k++) frame.classList.toggle(`s${k}`, k <= n);
+      steps.forEach((s) => s.classList.toggle("is-current", Number(s.dataset.step) === n));
+      capN.textContent = String(n).padStart(2, "0");
+      capT.textContent = steps.find((s) => Number(s.dataset.step) === n)?.dataset.cap ?? "";
+    };
+    const queue = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(update);
+    };
+    addEventListener("scroll", queue, { passive: true });
+    addEventListener("resize", queue);
+    update();
+    root.classList.add("is-ready");
+  }
+}
+
+/* Ad Agent's journey ------------------------------------------------------- */
+
+// partials/ad-journey.njk: the app's window held under the local nav while its steps scroll past behind it. The step
+// whose top has passed the middle of the screen is the one shown: each part of the window in or out by its `data-in`
+// and `data-out`, its classes by `data-st` ("4:made 12:dim", "-made" off), the root `s1`…`sN` up to the step; then
+// the camera moves and scales the window (1440 × 900) to frame what the step's `data-cam` names, and a ring is drawn
+// round each of its `data-hl` (a selector's matches as one box). The window's own coordinates are measured from the
+// screen through its current transform, so a camera still moving measures the same.
+function initJourney() {
+  for (const root of document.querySelectorAll("[data-journey]")) {
+    const view = root.querySelector(".aj-view"), win = root.querySelector(".aj-win"), hls = root.querySelector(".aj-hls");
+    const WW = win.offsetWidth, WH = win.offsetHeight;
+    const steps = [...root.querySelectorAll(".aj-step")];
+    const parts = [...win.querySelectorAll("[data-in], [data-out]")].map((el) => ({
+      el, from: el.dataset.in != null ? Number(el.dataset.in) : -Infinity, to: el.dataset.out != null ? Number(el.dataset.out) : Infinity,
+    }));
+    const staged = [...win.querySelectorAll("[data-st]")].map((el) => ({
+      el, rules: el.dataset.st.trim().split(/\s+/).map((t) => { const [k, c] = t.split(":"); return { k: Number(k), c }; }).sort((a, b) => a.k - b.k),
+    }));
+    const capK = root.querySelector(".aj-cap-k"), capT = root.querySelector(".aj-cap-t"), capX = root.querySelector(".aj-cap-x");
+    const capBody = root.querySelector(".aj-cap-body"), dots = [...root.querySelectorAll(".aj-dots i")];
+    let at = -1, cam = null, queued = false;
+
+    // A selector's matches as one box, in the window's coordinates.
+    const boxOf = (sel) => {
+      if (sel === "all") return { x: 0, y: 0, w: WW, h: WH };
+      const els = [...win.querySelectorAll(sel)].filter((e) => e.getClientRects().length);
+      if (!els.length) return null;
+      const wr = win.getBoundingClientRect(), s = wr.width / WW;
+      let x1 = Infinity, y1 = Infinity, x2 = -Infinity, y2 = -Infinity;
+      for (const e of els) {
+        const r = e.getBoundingClientRect();
+        // A card (or a chat turn) still sliding in: measured where it lands, not where it is mid-slide, or its
+        // highlight is left off centre by the slide (cards come in from 14px aside).
+        const slide = e.closest(".aj-card, .aj-turn");
+        const m = slide ? new DOMMatrixReadOnly(getComputedStyle(slide).transform === "none" ? undefined : getComputedStyle(slide).transform) : null;
+        const dx = m ? m.e : 0, dy = m ? m.f : 0;
+        x1 = Math.min(x1, (r.left - wr.left) / s - dx); y1 = Math.min(y1, (r.top - wr.top) / s - dy);
+        x2 = Math.max(x2, (r.right - wr.left) / s - dx); y2 = Math.max(y2, (r.bottom - wr.top) / s - dy);
+      }
+      return { x: x1, y: y1, w: x2 - x1, h: y2 - y1 };
+    };
+    // The camera: the box framed with a margin, no further in than 2.2× (or 6× the whole window's fit), the window
+    // kept over the view's edges when it is bigger than the view.
+    const place = () => {
+      if (!cam) return;
+      const VW = view.clientWidth, VH = view.clientHeight, fit = Math.min(VW / WW, VH / WH), pad = 26;
+      let s = Math.min(VW / (cam.w + 2 * pad), VH / (cam.h + 2 * pad));
+      s = Math.max(fit, Math.min(s, fit * 6, 2.2));
+      const ww = WW * s, wh = WH * s;
+      let tx = VW / 2 - (cam.x + cam.w / 2) * s, ty = VH / 2 - (cam.y + cam.h / 2) * s;
+      tx = ww <= VW ? (VW - ww) / 2 : Math.min(0, Math.max(VW - ww, tx));
+      ty = wh <= VH ? (VH - wh) / 2 : Math.min(0, Math.max(VH - wh, ty));
+      win.style.transform = `translate(${tx.toFixed(1)}px, ${ty.toFixed(1)}px) scale(${s.toFixed(4)})`;
+      win.style.setProperty("--inv", (1 / s).toFixed(3));
+    };
+    const show = (n) => {
+      root.dataset.at = String(n);
+      for (let k = 1; k < steps.length; k++) root.classList.toggle(`s${k}`, k <= n);
+      for (const p of parts) p.el.classList.toggle("is-on", n >= p.from && n < p.to);
+      for (const { el, rules } of staged) {
+        const on = new Set();
+        for (const r of rules) {
+          if (r.k > n) break;
+          if (r.c.startsWith("-")) on.delete(r.c.slice(1)); else on.add(r.c);
+        }
+        for (const r of rules) { const c = r.c.replace(/^-/, ""); el.classList.toggle(c, on.has(c)); }
+      }
+      const step = steps[n];
+      capK.textContent = String(n + 1).padStart(2, "0");
+      capT.textContent = step.querySelector("h3").textContent;
+      capX.innerHTML = step.querySelector("p").innerHTML;
+      capBody.classList.remove("is-new"); void capBody.offsetWidth; capBody.classList.add("is-new");
+      dots.forEach((d, k) => { d.classList.toggle("is-past", k < n); d.classList.toggle("is-now", k === n); });
+      // A phone's camera (`data-mcam`) frames less, so what it shows can be read.
+      const framing = (view.clientWidth < 600 && step.dataset.mcam) || step.dataset.cam;
+      cam = framing.split(",").map((s) => boxOf(s.trim())).filter(Boolean).reduce((a, b) => (a ? {
+        x: Math.min(a.x, b.x), y: Math.min(a.y, b.y), w: Math.max(a.x + a.w, b.x + b.w) - Math.min(a.x, b.x), h: Math.max(a.y + a.h, b.y + b.h) - Math.min(a.y, b.y),
+      } : b), null) || boxOf("all");
+      place();
+      hls.replaceChildren(...JSON.parse(step.dataset.hl || "[]").map((sel) => {
+        const b = boxOf(sel);
+        if (!b) return null;
+        const ring = document.createElement("span");
+        ring.className = "aj-hl";
+        Object.assign(ring.style, { left: `${b.x - 6}px`, top: `${b.y - 6}px`, width: `${b.w + 12}px`, height: `${b.h + 12}px` });
+        return ring;
+      }).filter(Boolean));
+    };
+    const update = () => {
+      queued = false;
+      const line = innerHeight * 0.5;
+      let n = 0;
+      steps.forEach((s, i) => { if (s.getBoundingClientRect().top <= line) n = i; });
+      if (n !== at) { at = n; show(n); }
+    };
+    const queue = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(update);
+    };
+    addEventListener("scroll", queue, { passive: true });
+    addEventListener("resize", () => { place(); queue(); });
+    new ResizeObserver(place).observe(view);
+    update();
+    root.classList.add("is-ready");
+  }
+}
+
 /* Scroll reveal ----------------------------------------------------------- */
 
 function initReveal() {
@@ -597,6 +742,8 @@ initRollouts();
 initVideos();
 initDemos();
 initPanelTours();
+initBuilds();
+initJourney();
 initLiveJobs();
 initDashboards();
 initDashboardDetails();

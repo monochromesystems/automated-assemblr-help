@@ -162,3 +162,85 @@
   .cw-strip { flex-wrap: wrap; padding-left: 0; }
   .cw-row.is-lifted { transform: translate(6px, -22px) rotate(-1deg); }
 }
+
+/* How the spread is made, as you scroll (panel/catalogue-producer/build.njk): the spread held in the top half of the
+   window, under the local nav (`--nav`), and the panel's settings, a step each, scrolling up under it. site.js
+   (initBuilds) marks the frame s1, s2 …, the steps reached, and each adds its part: the grid's slots, the cells joined,
+   the images, the copy, the two arrangements, the corners, the inserts; then each edits it. Until the script is ready (.is-ready) the spread
+   shows made and no slot shows. */
+.cb { --nav: 52px; --sh: calc((100svh - var(--nav)) * 0.5); position: relative; margin: 8px 0 104px; }
+.cb-stage { position: sticky; top: var(--nav); z-index: 2; height: var(--sh); padding: 12px 0; box-sizing: border-box; background: var(--bg); }
+/* The steps fade out as they go up under it. */
+.cb-stage::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 40px; background: linear-gradient(var(--bg), transparent); pointer-events: none; }
+.cb-board { display: grid; place-items: center; height: 100%; padding: 16px 16px 40px; box-sizing: border-box; border-radius: var(--radius); background: #ebebeb; }
+.cb-frame { width: min(100%, calc((var(--sh) - 24px - 56px) * 1190 / 842)); }
+.cb-cap { position: absolute; left: 18px; bottom: 22px; display: flex; align-items: baseline; gap: 8px; margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: #777; }
+.cb-cap-n { font-family: var(--font-mono); font-weight: 500; letter-spacing: 0; color: var(--signal); }
+
+/* The slots: the grid's cells, then the cells joined, a blue box each; an insert's dashed. */
+.cb-slot { position: absolute; z-index: 1; opacity: 0; border: max(1.5px, calc(var(--u) * 3)) solid var(--signal); border-radius: max(1px, calc(var(--u) * 2)); background: rgba(51, 114, 246, 0.07); pointer-events: none; transition: opacity 0.45s var(--ease-out); }
+.cb-slot.is-insert { border-style: dashed; }
+.cb-slot .cs-joined { font-size: max(7px, calc(var(--u) * 11)); }
+.cb.is-ready .cb-frame.s1:not(.s2) .cb-grid,
+.cb.is-ready .cb-frame.s2:not(.s3) .cb-joined,
+.cb.is-ready .cb-frame.s3:not(.s7) .cb-joined.is-insert { opacity: 1; }
+
+/* What each step adds, a cell at a time down the page. */
+.cb .cs-page > .cs-cell:nth-of-type(2) { --d: 70ms; }
+.cb .cs-page > .cs-cell:nth-of-type(3) { --d: 140ms; }
+.cb .cs-page > .cs-cell:nth-of-type(4) { --d: 210ms; }
+.cb .cs-page > .cs-cell:nth-of-type(5) { --d: 280ms; }
+.cb .cs-img, .cb .cs-copy, .cb .cs-badge, .cb .cs-device, .cb .cs-table, .cb .cs-ad {
+  transition: opacity 0.5s var(--ease-out) var(--d, 0s), transform 0.6s var(--ease-out) var(--d, 0s); }
+.cb.is-ready .cb-frame:not(.s3) .cs-img { opacity: 0; transform: scale(0.96); }
+.cb.is-ready .cb-frame:not(.s4) .cs-copy { opacity: 0; transform: translateY(calc(var(--u) * 8)); }
+.cb.is-ready .cb-frame:not(.s6) :is(.cs-badge, .cs-device) { opacity: 0; transform: scale(0.4); }
+.cb.is-ready .cb-frame:not(.s7) :is(.cs-table, .cs-ad) { opacity: 0; transform: scale(0.97); }
+/* The two products set by hand start in plain Line-up and move to their own arrangement. */
+.cb .cs-moves { transition: left 0.9s var(--ease-out), top 0.9s var(--ease-out), width 0.9s var(--ease-out), height 0.9s var(--ease-out); }
+.cb.is-ready .cb-frame:not(.s5) .cs-moves { left: var(--x0) !important; top: var(--y0) !important; width: var(--w0) !important; height: var(--h0) !important; }
+
+/* Then the spread edited, steps 8 to 12: an element marked cb-k<step> goes to its --x<step> … --h<step> place at that
+   step, gliding there; cb-in<step> comes in at it and cb-out<step> goes. With no script the spread stays as made. */
+.cb .cs-cell { transition: left 0.8s var(--ease-out), top 0.8s var(--ease-out), width 0.8s var(--ease-out), height 0.8s var(--ease-out), opacity 0.5s var(--ease-out), transform 0.6s var(--ease-out); }
+.cb .cs-img { transition: opacity 0.5s var(--ease-out) var(--d, 0s), transform 0.6s var(--ease-out) var(--d, 0s), height 0.8s var(--ease-out); }
+.cb .cs-img img, .cb .cs-device { transition: left 0.8s var(--ease-out), top 0.8s var(--ease-out), width 0.8s var(--ease-out), height 0.8s var(--ease-out), opacity 0.5s var(--ease-out), transform 0.6s var(--ease-out); }
+.cb .cs-badge, .cb .cs-device { z-index: 10; }
+.cb-frame.s8 .cb-k8 { z-index: 3; left: var(--x8) !important; top: var(--y8) !important; width: var(--w8) !important; height: var(--h8) !important; }
+.cb-frame.s9 .cb-k9 { z-index: var(--z9); left: var(--x9) !important; top: var(--y9) !important; width: var(--w9) !important; height: var(--h9) !important; }
+.cb-frame.s11 .cb-k11 { left: var(--x11) !important; top: var(--y11) !important; width: var(--w11) !important; height: var(--h11) !important; }
+.cb-frame.s11 .cb-k11 > .cs-img { height: var(--ih11) !important; }
+.cb-frame.s12 .cb-k12 { left: var(--x12) !important; top: var(--y12) !important; width: var(--w12) !important; height: var(--h12) !important; }
+.cb-frame.s10 .cb-out10 { opacity: 0; transform: scale(0.9); }
+.cb-frame:not(.s10) .cb-in10, .cb-frame.s11 .cb-out11 { opacity: 0; transform: translateY(30%); }
+
+/* The steps: what to do beside the panel set for it, the setting that does it ringed in blue while it is the step. */
+.cb-steps { margin: 0; padding: 0; list-style: none; }
+.cb-step { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 56px; align-items: start; max-width: 1000px; min-height: calc(var(--sh) * 0.92); margin-inline: auto; padding: 44px 0 0; box-sizing: border-box; transition: opacity 0.4s var(--ease-out); }
+.cb-step-start { grid-template-columns: minmax(0, 1fr); min-height: calc(var(--sh) * 0.7); }
+.cb-step:last-child { min-height: calc(var(--sh) * 1.15); }
+.cb.is-ready .cb-step:not(.is-current) { opacity: 0.32; }
+.cb-text { max-width: 30em; padding-top: 12px; }
+.cb-text .hw-text { font-size: 17px; }
+/* The first editing step heads them. */
+.cb-group { margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--signal); }
+.cb-rows .pt-tr { grid-template-columns: 18px minmax(0, 1fr) auto; }
+.cb-eye { display: block; width: 16px; height: 16px; fill: none; stroke: #555; stroke-width: 1.3; stroke-linecap: round; }
+.cb-strip { padding-left: 0; flex-wrap: wrap; }
+.cb-strip .cw-thumb.cb-set { margin: 0; padding: 0; border-radius: 5px; }
+.cb-ui .pt-card { padding: 18px 20px 20px; }
+.cb-set { margin: -4px -7px; padding: 4px 7px; border-radius: 8px; transition: box-shadow 0.4s var(--ease-out), background-color 0.4s var(--ease-out); }
+.cb-step.is-current .cb-set, .cb:not(.is-ready) .cb-set { background: rgba(51, 114, 246, 0.07); box-shadow: 0 0 0 2px var(--signal); }
+@media (max-width: 834px) {
+  .cb-step { grid-template-columns: minmax(0, 1fr); gap: 18px; padding-top: 32px; }
+  .cb-ui { max-width: 420px; }
+}
+@media (max-width: 734px) {
+  .cb { --nav: 48px; margin-bottom: 72px; }
+  .cb-board { padding: 10px 10px 34px; }
+  .cb-cap { left: 12px; bottom: 20px; font-size: 10px; }
+  .cb-text .hw-text { font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cb *, .cb *::before { transition: none !important; }
+}
