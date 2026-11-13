@@ -1841,6 +1841,15 @@ a.tile:hover .tile-photo { --lift: 1.05; }
 .uf-code { fill: #888; font-family: var(--font-mono); font-size: 10px; }
 .uf-cap { margin: 12px 0 0; align-self: stretch; font-size: 13px; line-height: 1.4; color: #555; }
 .uf-cap b { display: inline-block; width: 18px; height: 18px; margin-right: 6px; border-radius: 50%; background: var(--signal); font-size: 11px; line-height: 18px; text-align: center; color: #fff; }
+/* Assemblr's corners: each product's price box and its set, the Unit box under it. */
+.uf-corners { display: flex; flex-direction: column; gap: 8px; align-self: stretch; }
+.uf-corner { padding: 8px 10px; border: 1px solid #e3e5e9; border-radius: 8px; font-size: 12px; }
+.uf-corner-name { margin: 0 0 5px; font-weight: 600; color: #555; }
+.uf-field { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+.uf-box { flex: 1; min-height: 22px; padding: 2px 8px; border: 1px solid #d5d8de; border-radius: 5px; line-height: 16px; background: #fff; }
+.uf-box.uf-lit { border-color: rgba(51, 114, 246, 0.5); }
+.uf-set { flex: none; font-size: 11px; color: #888; }
+.uf-label { flex: none; width: 30px; font-size: 11px; color: #555; }
 @media (max-width: 734px) { .uf-row { min-width: 680px; } }
 @media (max-width: 734px) { .jf-book { min-width: 520px; } .jf-notes { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 734px) { .pf-pages { min-width: 520px; } }
