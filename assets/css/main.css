@@ -1772,7 +1772,7 @@ a.tile:hover .tile-photo { --lift: 1.05; }
 /* Automated Assemblr's overlay folders (panel/catalogue-producer/price-folders.njk): a job's folder tree, each folder
    with the panel's button that links it, beside four pages whose prices come from the folder each corner chose. Built
    on the price designs' card and its file rows. */
-.pf { grid-template-columns: minmax(0, 360px) minmax(0, 1fr); }
+.pf { grid-template-columns: minmax(0, 400px) minmax(0, 1fr); }
 .pf-tree { font-size: 13px; }
 .pf-tree ul { margin: 0; padding: 0; list-style: none; }
 .pf-in { display: flex; flex-direction: column; gap: 4px; margin: 4px 0 6px 8px !important; padding-left: 16px !important; border-left: 1px solid #e3e5e9; }
@@ -1800,7 +1800,7 @@ a.tile:hover .tile-photo { --lift: 1.05; }
 
 /* A job's files (panel/catalogue-producer/job-folders.njk): the folder tree of the overlay folders' card, its images
    named by code, beside the brief drawn as a small sheet with a note on each column it reads. */
-.jf { grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: start; }
+.jf { grid-template-columns: minmax(0, 400px) minmax(0, 1fr); align-items: start; }
 .jf-pic { flex: none; width: 15px; height: 12px; border-radius: 2px; background: linear-gradient(135deg, #c9d7ef, #8fb3f9); }
 .jf-sub { font-weight: 500; }
 .jf-off { font-weight: 500; color: #aaa; } .jf-off .pd-folder-icon { fill: #d5d8de; }
