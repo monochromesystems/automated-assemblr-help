@@ -1817,6 +1817,31 @@ a.tile:hover .tile-photo { --lift: 1.05; }
 .jf-notes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 20px; margin: 12px 0 0; padding: 0; list-style: none; color: #555; }
 .jf-n { font-weight: 600; color: #111; }
 @media (max-width: 834px) { .jf { grid-template-columns: minmax(0, 1fr); } }
+
+/* The "each" under a price (panel/catalogue-producer/unit-field.njk): the brief's Unit column, the device's tagged
+   frame, the price points placed, left to right, the Unit lit blue in all three. */
+.uf { display: block; }
+.uf-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+.uf-col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; }
+.uf-col .jf-book-name { align-self: flex-start; color: #555; }
+.uf-sheet { width: 100%; }
+.uf-sheet td { white-space: nowrap; }
+.uf-lit { background: rgba(51, 114, 246, 0.1); color: var(--signal); font-weight: 600; }
+.jf-head .uf-lit { background: rgba(51, 114, 246, 0.18); }
+.uf-go { flex: none; width: 34px; height: 18px; margin-top: 90px; }
+.uf-device { display: block; width: 100%; max-width: 270px; height: auto; overflow: visible; }
+.uf-placed { display: block; width: 100%; max-width: 190px; height: auto; overflow: visible; }
+.uf-frame { fill: none; stroke: var(--signal); stroke-width: 1.5; stroke-dasharray: 4 2.5; }
+.uf-lead { fill: none; stroke: var(--signal); stroke-width: 1.2; }
+.uf-tag { fill: var(--signal); }
+.uf-tag-text { fill: #fff; font-size: 12px; font-weight: 700; text-anchor: middle; }
+.uf-note { fill: #888; font-size: 11px; }
+.uf-hit { fill: none; stroke: var(--signal); stroke-width: 1.6; }
+.uf-empty { fill: none; stroke: #b9bec7; stroke-width: 1.2; stroke-dasharray: 3 2.5; }
+.uf-code { fill: #888; font-family: var(--font-mono); font-size: 10px; }
+.uf-cap { margin: 12px 0 0; align-self: stretch; font-size: 13px; line-height: 1.4; color: #555; }
+.uf-cap b { display: inline-block; width: 18px; height: 18px; margin-right: 6px; border-radius: 50%; background: var(--signal); font-size: 11px; line-height: 18px; text-align: center; color: #fff; }
+@media (max-width: 734px) { .uf-row { min-width: 680px; } }
 @media (max-width: 734px) { .jf-book { min-width: 520px; } .jf-notes { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 734px) { .pf-pages { min-width: 520px; } }
 

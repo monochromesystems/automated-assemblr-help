@@ -7,10 +7,10 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/main.css?v=mwebym0q">
-  <link rel="stylesheet" href="assets/css/panels/catalogue-producer.css?v=mwebym0q">
+  <link rel="stylesheet" href="assets/css/main.css?v=mwec27b9">
+  <link rel="stylesheet" href="assets/css/panels/catalogue-producer.css?v=mwec27b9">
   <script>document.documentElement.classList.replace("no-js", "js")</script>
-  <script type="module" src="assets/js/site.js?v=mwebym0q"></script>
+  <script type="module" src="assets/js/site.js?v=mwec27b9"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -271,7 +271,58 @@
   </svg></div>
 </div>
 </div>
-      <dl class="hp-big-points"><div><dt>One file, one device</dt><dd>Save each device as an .indd, .idml or .idms file. Build it as you like, on as many layers as it needs: a panel or a shape behind, images, and the text frames for the price. It is placed as one, on the product&#39;s corner, and follows the product.</dd></div><div><dt>Text mapping</dt><dd>Type X where the digits go: $X.XX for dollars and cents, XXc for cents alone. Each product&#39;s price is written into those runs only, so the $, the point, the c and every paragraph and character style round them stay as you set them; superscript cents stay superscript. No tagging needed.</dd></div><div><dt>The “each” under the price, from the brief</dt><dd>Give the brief a Unit column: “each”, “per kg”, “per 100 g”, a value a product. In the device, type “each” in a text frame of its own, styled as it should print, and tag that frame Unit in InDesign&#39;s Tags panel (Link a text frame to a brief column, below). Each product&#39;s Unit then replaces “each”: “$12.50 each”, “$4.99 per kg”. A product with no Unit leaves the frame empty. Any other column works the same way: tag a frame with its header. Tag the whole frame, not a run of its text.</dd></div><div><dt>A folder a set, a file a kind</dt><dd>One folder holds a device for each kind of price: x-xx, xx-xx and xx-c side by side, $5.50 takes the first, $12.50 the second and 95c the third. Name a file for its shape to settle a device its text leaves open. A folder holds one style only: put each additional style in a folder of its own, a price set (Set up your overlay folders, above). Two devices of one shape and size in one folder clash, and neither is used; in two folders they never do.</dd></div></dl>
+      <dl class="hp-big-points"><div><dt>One file, one device</dt><dd>Save each device as an .indd, .idml or .idms file. Build it as you like, on as many layers as it needs: a panel or a shape behind, images, and the text frames for the price. It is placed as one, on the product&#39;s corner, and follows the product.</dd></div><div><dt>Text mapping</dt><dd>Type X where the digits go: $X.XX for dollars and cents, XXc for cents alone. Each product&#39;s price is written into those runs only, so the $, the point, the c and every paragraph and character style round them stay as you set them; superscript cents stay superscript. No tagging needed.</dd></div><div><dt>The “each” under the price, from the brief</dt><dd>Words beside the price that change from product to product, “each” or “per kg”, come from a column of the brief, Unit say, written into a tagged frame of the device (The “each” under the price, below).</dd></div><div><dt>A folder a set, a file a kind</dt><dd>One folder holds a device for each kind of price: x-xx, xx-xx and xx-c side by side, $5.50 takes the first, $12.50 the second and 95c the third. Name a file for its shape to settle a device its text leaves open. A folder holds one style only: put each additional style in a folder of its own, a price set (Set up your overlay folders, above). Two devices of one shape and size in one folder clash, and neither is used; in two folders they never do.</dd></div></dl>
+    </li>
+    <li class="hp-item hp-big reveal" id="help-price-unit">
+      <h4 class="hp-q">The “each” under the price</h4>
+      <p class="hp-a hp-big-intro">A price device can carry more than the price: the “each” or “per kg” under it, written from the brief for every product.</p>
+      <div class="hp-big-art">
+<div class="pd uf" aria-hidden="true">
+  <div class="pd-scroll"><div class="uf-row">
+    <div class="uf-col">
+      <p class="jf-book-name"><svg class="pf-sheet-icon" viewBox="0 0 16 18"><path d="M1 2a1 1 0 0 1 1-1h8l5 5v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/><path class="pf-sheet-grid" d="M4 9h8M4 12h8M4 15h8M8 7v10"/></svg>Brief.xlsx</p>
+      <table class="jf-sheet uf-sheet">
+        <tbody>
+          <tr class="jf-head"><td>Code</td><td>Price</td><td class="uf-lit">Unit</td></tr><tr><td>410201</td><td>$12.50</td><td class="uf-lit">each</td></tr><tr><td>410305</td><td>$4.99</td><td class="uf-lit">per kg</td></tr><tr><td>410411</td><td>$2.20</td><td class="uf-lit"></td></tr>
+        </tbody>
+      </table>
+      <p class="uf-cap"><b>1</b> A Unit column, a value a product</p>
+    </div>
+    <svg class="uf-go" viewBox="0 0 40 20"><path class="pd-go" d="M4 10h30M29 5l5 5-5 5"/></svg>
+    <div class="uf-col">
+      <p class="jf-book-name">x-xx.indd</p>
+      <svg class="uf-device" viewBox="-6 -6 250 112">
+        <rect class="pd-panel" width="150" height="80" rx="22"/><text class="pd-price" x="75" y="50"><tspan class="pd-cur" dy="-14">$</tspan><tspan class="pd-dol" dy="14">X</tspan><tspan class="pd-cts" dy="-15">XX</tspan></text><text class="pd-unit" x="75" y="70">each</text>
+        <rect class="uf-frame" x="54" y="58" width="42" height="17" rx="2"/>
+        <path class="uf-lead" d="M96 66.5h66"/>
+        <rect class="uf-tag" x="162" y="57" width="52" height="19" rx="4"/><text class="uf-tag-text" x="188" y="70.5">Unit</text>
+        <text class="uf-note" x="162" y="92">tagged frame</text>
+      </svg>
+      <p class="uf-cap"><b>2</b> “each” in a frame of its own, tagged Unit</p>
+    </div>
+    <svg class="uf-go" viewBox="0 0 40 20"><path class="pd-go" d="M4 10h30M29 5l5 5-5 5"/></svg>
+    <div class="uf-col">
+      <p class="jf-book-name">On the page</p>
+      <svg class="uf-placed" viewBox="0 0 170 236">
+        <g transform="translate(0 0)">
+          <rect class="pd-panel" width="150" height="70" rx="20"/><text class="pd-price" x="75" y="44"><tspan class="pd-cur" dy="-14">$</tspan><tspan class="pd-dol" dy="14">12</tspan><tspan class="pd-cts" dy="-15">50</tspan></text><rect class="uf-hit" x="54.8" y="50" width="40.4" height="17" rx="4"/><text class="pd-unit" x="75" y="63">each</text>
+          <text class="uf-code" x="158" y="40">410201</text>
+        </g>
+        <g transform="translate(0 80)">
+          <rect class="pd-panel" width="150" height="70" rx="20"/><text class="pd-price" x="75" y="44"><tspan class="pd-cur" dy="-14">$</tspan><tspan class="pd-dol" dy="14">4</tspan><tspan class="pd-cts" dy="-15">99</tspan></text><rect class="uf-hit" x="47.2" y="50" width="55.599999999999994" height="17" rx="4"/><text class="pd-unit" x="75" y="63">per kg</text>
+          <text class="uf-code" x="158" y="40">410305</text>
+        </g>
+        <g transform="translate(0 160)">
+          <rect class="pd-panel" width="150" height="70" rx="20"/><text class="pd-price" x="75" y="44"><tspan class="pd-cur" dy="-14">$</tspan><tspan class="pd-dol" dy="14">2</tspan><tspan class="pd-cts" dy="-15">20</tspan></text><rect class="uf-empty" x="54" y="50" width="42" height="17" rx="2"/>
+          <text class="uf-code" x="158" y="40">410411</text>
+        </g>
+      </svg>
+      <p class="uf-cap"><b>3</b> Each product’s Unit in its place; none, the frame empty</p>
+    </div>
+  </div></div>
+</div>
+</div>
+      <dl class="hp-big-points"><div><dt>In the brief</dt><dd>A column headed Unit, holding “each”, “per kg”, “per 100 g”: whatever goes under that product&#39;s price.</dd></div><div><dt>In the device</dt><dd>Type “each” in a text frame of its own, styled as it should print, and tag the frame Unit in InDesign&#39;s Tags panel (Link a text frame to a brief column, below). Tag the whole frame, not a run of its text.</dd></div><div><dt>On the page</dt><dd>Each product&#39;s Unit replaces “each”, in the frame&#39;s styles: “$12.50 each”, “$4.99 per kg”. A product whose Unit cell is blank leaves the frame empty, and the panel names it.</dd></div><div><dt>Any column</dt><dd>The same works for any column of the brief: name the tag for the column&#39;s header. A tag that names no column is left as you typed it.</dd></div></dl>
     </li>
     <li class="hp-item hp-wide reveal" id="help-price-tags">
       <h4 class="hp-q">Link a text frame to a brief column</h4>
