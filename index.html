@@ -3,14 +3,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Automated Assemblr for InDesign help</title>
-  <meta name="description" content="How to use Automated Assemblr for InDesign. How it works, every control in its panel explained, the everyday jobs step by step, and what its messages mean.">
+  <meta name="description" content="How to use Automated Assemblr for InDesign: how it works, what each control in its panel does and what its messages mean.">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/main.css?v=mwecb9jk">
-  <link rel="stylesheet" href="assets/css/panels/catalogue-producer.css?v=mwecb9jk">
+  <link rel="stylesheet" href="assets/css/main.css?v=mwigasho">
+  <link rel="stylesheet" href="assets/css/panels/catalogue-producer.css?v=mwigasho">
   <script>document.documentElement.classList.replace("no-js", "js")</script>
-  <script type="module" src="assets/js/site.js?v=mwecb9jk"></script>
+  <script type="module" src="assets/js/site.js?v=mwigasho"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -33,21 +33,21 @@
   <div class="container">
     <p class="label product-hero-kind">Plugin for InDesign</p>
     <h1 class="t-hero">Automated Assemblr help</h1>
-    <p class="t-subhead product-hero-subhead">Preparing your files, how it works, every control in the panel, and the everyday jobs step by step.</p>
+    <p class="t-subhead product-hero-subhead">Start by preparing your files. The page then explains how the plugin works and what each control in the panel does, and takes you through the everyday jobs.</p>
   </div>
 </section>
 <section class="section theme-gray" id="prepare">
   <div class="container container-wide">
     <div class="section-head reveal"><span class="section-index">01</span><span class="label">Prepare</span></div>
     <h2 class="t-l section-title pt-heading reveal">Prepare your files and folders</h2>
-    <p class="pt-intro reveal">Before you open the panel: one Excel brief, your images named by product code, and a folder of badges and price artwork. Keep a job&#39;s files together, and the plugin finds the rest.</p>
+    <p class="pt-intro reveal">Before you open the panel, have ready one Excel brief, your images named by product code, and a folder of badges and price devices. Keep a job&#39;s files together so the plugin can find them.</p>
     
 <div class="hp-group" aria-labelledby="hp-job">
   <h3 class="hp-name reveal" id="hp-job">Your job&#39;s files</h3>
   <ul class="hp-list">
     <li class="hp-item hp-big reveal" id="help-job-folders">
       <h4 class="hp-q">Lay out a job&#39;s folders</h4>
-      <p class="hp-a hp-big-intro">One folder a job holds everything the catalogue is built from. Each part is linked once in the panel, by the button beside it in the drawing, and read again whenever you build or check.</p>
+      <p class="hp-a hp-big-intro">Keep everything the catalogue is built from in one folder for the job. Link each part once in the panel, with the button beside it in the drawing. Each part is read again whenever you build or check.</p>
       <div class="hp-big-art">
 <div class="pd jf" aria-hidden="true">
   <div class="pf-tree">
@@ -98,15 +98,15 @@
   </div>
 </div>
 </div>
-      <dl class="hp-big-points"><div><dt>The brief</dt><dd>An Excel workbook, one row a product, with a product code column. Link brief… in the Folders tile links it; it is what the pages are built from, and edits on the pages can be written back to it.</dd></div><div><dt>Image folders</dt><dd>Your packshots, each named with its product&#39;s code, in as many folders as you like: Add folder… links each one, and its subfolders are searched too.</dd></div><div><dt>The overlays folder</dt><dd>Badges, and one price set only: one InDesign file for each kind of price. Choose folder… in Overlays links it (Set up your overlay folders, below).</dd></div><div><dt>Additional price device styles</dt><dd>Optional: every other style of price device goes in a folder of its own, one price set a folder. Add price set… links the first as Set 1.</dd></div></dl>
+      <dl class="hp-big-points"><div><dt>The brief</dt><dd>An Excel workbook with one row per product and a product code column. Link it with Link brief… in the Folders tile. The pages are built from it, and edits on the pages can be written back to it.</dd></div><div><dt>Image folders</dt><dd>Your images, each named with its product&#39;s code, in as many folders as you like. Add folder… links each one. Its subfolders are searched too.</dd></div><div><dt>The overlays folder</dt><dd>Holds the badges and one price set, with one InDesign file for each kind of price. Link it with Choose folder… in the Overlays tile (see Set up your overlay folders, below).</dd></div><div><dt>Additional price device styles</dt><dd>Optional. Each other style of price device goes in a folder of its own, one price set per folder. Add price set… links the first as Set 1.</dd></div></dl>
     </li>
     <li class="hp-item hp-wide reveal" id="help-prepare-brief">
       <h4 class="hp-q">Prepare the brief</h4>
-      <ol class="hp-steps"><li>Save it as an Excel workbook (.xlsx). From Numbers or Google Sheets, export or download it as .xlsx. The first sheet is read unless you choose another.</li><li>One row a product, under a row of column headers. Title rows above the headers are fine, within the first 30 rows.</li><li>Give it a product code column, the one column it needs: headed Product code, Code, SKU, SAP, Article or Item. A row with no code, a section title say, is skipped. The code is the product: change it and it is a new product.</li><li>Name, Description, Price, Page and Hero are found by their headers (Product name or Title; Description or Desc; Price, RRP, Retail price or Cost; Page or Pg; Hero or Featured). Every other column, Pack or Unit say, is read under its own header, for you to show as copy or use for overlays.</li><li>One price a cell: $12.50, 12.5, 99c, €4,99 and AUD 12.50 all read. A cell the plugin cannot read as one price, 2 for $5 say, is reported.</li><li>A badge column names files in the overlays folder: New, Australian grown finds new.png and australian grown.png. Separate names with commas, semicolons or line breaks.</li><li>A line break inside a cell (Option+Return on a Mac, Alt+Enter on Windows) is a line break on the page.</li><li>Keep merged cells out of the product rows, and close the workbook in Excel when the plugin writes to it: it waits while Excel has it open.</li></ol>
+      <ol class="hp-steps"><li>Save it as an Excel workbook (.xlsx). From Numbers or Google Sheets, export or download it as .xlsx. The first sheet is read unless you choose another.</li><li>Put one product on each row, under a row of column headers. Title rows above the headers are fine, as long as the headers are within the first 30 rows.</li><li>The one column the brief needs is a product code, headed Product code, Code, SKU, SAP, Article or Item. A row with no code, such as a section title, is skipped. The code identifies the product, so if you change it, it becomes a new product.</li><li>Name, Description, Price, Page and Hero are found by their headers (Product name or Title; Description or Desc; Price, RRP, Retail price or Cost; Page or Pg; Hero or Featured). Every other column, such as Pack or Unit, is read under its own header, so you can show it as copy or use it for overlays.</li><li>Put one price in each cell. $12.50, 12.5, 99c, €4,99 and AUD 12.50 are all read. A cell the plugin cannot read as one price, such as 2 for $5, is reported.</li><li>A badge column names files in the overlays folder: a cell reading New, Australian grown finds new.png and australian grown.png. Separate names with commas, semicolons or line breaks.</li><li>A line break inside a cell (Option+Return on a Mac, Alt+Enter on Windows) is a line break on the page.</li><li>Keep merged cells out of the product rows. Close the workbook in Excel before the plugin writes to it, because the plugin waits while Excel has it open.</li></ol>
     </li>
     <li class="hp-item hp-wide reveal" id="help-prepare-images">
       <h4 class="hp-q">Name your images</h4>
-      <ol class="hp-steps"><li>Put the product&#39;s code in each file&#39;s name: 410201.psd, 410201 front.psd and SKU410201-back.tif all find product 410201. Or name a folder for the code and put its shots inside.</li><li>A code under five characters must start the file&#39;s name (12 front.jpg), or be the folder&#39;s whole name, so it is never found inside another number.</li><li>Several images of one product are placed in the order of the number after the code: 410201 first, then 410201 2, 410201 3, and on to 10.</li><li>Subfolders are searched. Folders named old, archive, exports or _exports are not, so keep retired shots there.</li><li>PSD, PSB, TIFF, PNG, JPEG, JPEG 2000, HEIC, AI, PDF, EPS, SVG, GIF and BMP are placed. A PSD, or a PNG or TIFF with transparency, is fitted by its cut-out shape; a JPEG by its whole picture.</li><li>The same picture saved as both PSD and JPEG is placed twice until you choose one type under Prefer file types.</li><li>Files kept in iCloud or Dropbox must be on the Mac or PC: choose Make Available Offline or Download Now for the folder first.</li><li>Names that carry no code? Tick a column under Matching instead: a column of file names in the brief, or the product&#39;s name (marked Check, for you to confirm).</li></ol>
+      <ol class="hp-steps"><li>Put the product&#39;s code in each file&#39;s name: 410201.psd, 410201 front.psd and SKU410201-back.tif all find product 410201. Or name a folder for the code and put the product&#39;s images inside.</li><li>A code under five characters must start the file&#39;s name (12 front.jpg), or be the folder&#39;s whole name, so it is never found inside another number.</li><li>Several images of one product are placed in the order of the number after the code: 410201 first, then 410201 2, 410201 3, and so on up to 10.</li><li>Subfolders are searched. Folders named old, archive, exports or _exports are not, so keep retired images there.</li><li>PSD, PSB, TIFF, PNG, JPEG, JPEG 2000, HEIC, AI, PDF, EPS, SVG, GIF and BMP are placed. A PSD, or a PNG or TIFF with transparency, is fitted by the shape of its cut-out. A JPEG is fitted by its whole picture.</li><li>The same image saved as both PSD and JPEG is placed twice until you choose one type under Prefer file types.</li><li>Files kept in iCloud or Dropbox must be downloaded to the Mac or PC. Choose Make Available Offline or Download Now for the folder first.</li><li>If the file names carry no code, tick another way under Matching: a column of file names in the brief, or the product&#39;s name. A match by the product&#39;s name is marked Check for you to confirm.</li></ol>
     </li>
   </ul>
 </div>
@@ -117,7 +117,7 @@
   <ul class="hp-list">
     <li class="hp-item hp-big reveal" id="help-price-folders">
       <h4 class="hp-q">Set up your overlay folders</h4>
-      <p class="hp-a hp-big-intro">Badges and prices come from folders of artwork on disk. Keep a job&#39;s folders together, link each one once in the panel, and each corner with a price chooses the folder its prices are drawn from.</p>
+      <p class="hp-a hp-big-intro">Badges and price devices come from folders of artwork on disk. Keep a job&#39;s folders together and link each one once in the panel. Each corner with a price then chooses the folder its price devices are drawn from.</p>
       <div class="hp-big-art">
 <div class="pd pf" aria-hidden="true">
   <div class="pf-tree">
@@ -213,11 +213,11 @@
   </svg></div>
 </div>
 </div>
-      <dl class="hp-big-points"><div><dt>The overlays folder</dt><dd>Choose folder… in Overlays links it. It holds the badges and one price set only, the main style: one device for each kind of price. Every corner draws its price from these until it chooses another set.</dd></div><div><dt>Additional price device styles</dt><dd>Each other style, a sale look say, is a price set in a folder of its own. Add price set… links the first as Set 1, the next as Set 2. Change… points a set at another folder and keeps the corners that chose it; × removes it, and what chose it goes back to the overlays folder.</dd></div><div><dt>Which set a price uses</dt><dd>On a corner with a price, Price set chooses the overlays folder or a set, for the document, a range of pages or one product. A page or a product that chooses a set still follows every other setting of the corner above it.</dd></div><div><dt>Folders the plugin cannot reach</dt><dd>The document remembers every device it has used, so a folder renamed, moved or on a drive not plugged in goes on working from what the document holds, and the panel says so once. Choose folder… or Change… links it again.</dd></div></dl>
+      <dl class="hp-big-points"><div><dt>The overlays folder</dt><dd>Link it with Choose folder… in the Overlays tile. It holds the badges and one price set (the main style), with one device for each kind of price. Every corner draws its price device from this set until it chooses another.</dd></div><div><dt>Additional price device styles</dt><dd>Each other style, such as a sale look, is a price set in a folder of its own. Add price set… links the first as Set 1 and the next as Set 2. Change… points a set at another folder, and the corners that chose the set keep it. × removes a set, and anything that chose it goes back to the overlays folder.</dd></div><div><dt>Which set a price uses</dt><dd>On a corner with a price, Price set chooses the overlays folder or one of the sets, for the document, a range of pages or one product. A page or product that chooses its own set still follows every other setting of the corner above it.</dd></div><div><dt>Folders the plugin cannot reach</dt><dd>The document remembers every device it has used. If a folder is renamed, moved or on an unplugged drive, its devices keep working from what the document holds, and the panel tells you once. Choose folder… or Change… links the folder again.</dd></div></dl>
     </li>
     <li class="hp-item hp-big reveal" id="help-price-devices">
       <h4 class="hp-q">Make your price devices</h4>
-      <p class="hp-a hp-big-intro">Each price device is an InDesign file of its own. The overlays folder holds one price set; each additional style is a price set in a folder of its own. Automated Assemblr writes each product&#39;s price from the brief into the device that fits it.</p>
+      <p class="hp-a hp-big-intro">Each price device is an InDesign file of its own. The overlays folder holds one price set. Each additional style is a price set in a folder of its own. Automated Assemblr writes each product&#39;s price from the brief into the device that fits it.</p>
       <div class="hp-big-art">
 <div class="pd" aria-hidden="true">
   <div class="pd-folders">
@@ -271,11 +271,11 @@
   </svg></div>
 </div>
 </div>
-      <dl class="hp-big-points"><div><dt>One file, one device</dt><dd>Save each device as an .indd, .idml or .idms file. Build it as you like, on as many layers as it needs: a panel or a shape behind, images, and the text frames for the price. It is placed as one, on the product&#39;s corner, and follows the product.</dd></div><div><dt>Text mapping</dt><dd>Type X where the digits go: $X.XX for dollars and cents, XXc for cents alone. Each product&#39;s price is written into those runs only, so the $, the point, the c and every paragraph and character style round them stay as you set them; superscript cents stay superscript. No tagging needed.</dd></div><div><dt>The “each” under the price, from the brief</dt><dd>Words beside the price that change from product to product, “each” or “per kg”, come from a column of the brief, Unit say, written into a tagged frame of the device (The “each” under the price, below).</dd></div><div><dt>A folder a set, a file a kind</dt><dd>One folder holds a device for each kind of price: x-xx, xx-xx and xx-c side by side, $5.50 takes the first, $12.50 the second and 95c the third. Name a file for its shape to settle a device its text leaves open. A folder holds one style only: put each additional style in a folder of its own, a price set (Set up your overlay folders, above). Two devices of one shape and size in one folder clash, and neither is used; in two folders they never do.</dd></div></dl>
+      <dl class="hp-big-points"><div><dt>One file for each device</dt><dd>Save each device as an .indd, .idml or .idms file. Build it however you like, on as many layers as it needs, for example a panel or shape behind, images, and the text frames for the price. It is placed as one item on the product&#39;s corner and follows the product.</dd></div><div><dt>Text mapping</dt><dd>Type X where the digits go: $X.XX for dollars and cents, XXc for cents alone. Each product&#39;s price is written into those runs only. The $, the point, the c and every paragraph and character style around them stay as you set them, so superscript cents stay superscript. The price needs no tags.</dd></div><div><dt>The “each” under the price, from the brief</dt><dd>Words beside the price that change from product to product, such as “each” or “per kg”, come from a column of the brief, for example Unit. They are written into a tagged frame in the device (see The “each” under the price, below).</dd></div><div><dt>One folder per set, one file per price shape</dt><dd>One folder holds a device for each shape of price. With x-xx, xx-xx and xx-c side by side, $5.50 takes the first, $12.50 the second and 95c the third. If a device&#39;s text leaves its shape unclear, name the file for its shape. A folder holds one style only, so put each additional style in a folder of its own, as a price set (see Set up your overlay folders, above). Two devices of the same shape and size in one folder clash, and neither is used. In two different folders they never clash.</dd></div></dl>
     </li>
     <li class="hp-item hp-big reveal" id="help-price-unit">
       <h4 class="hp-q">The “each” under the price</h4>
-      <p class="hp-a hp-big-intro">A price device can carry more than the price: the “each” or “per kg” under it, written from the brief for every product.</p>
+      <p class="hp-a hp-big-intro">A price device can also carry the “each” or “per kg” under the price, written from the brief for every product.</p>
       <div class="hp-big-art">
 <div class="pd uf" aria-hidden="true">
   <div class="pd-scroll"><div class="uf-row">
@@ -322,11 +322,11 @@
   </div></div>
 </div>
 </div>
-      <dl class="hp-big-points"><div><dt>In the brief</dt><dd>A column headed Unit, holding “each”, “per kg”, “per 100 g”: whatever goes under that product&#39;s price.</dd></div><div><dt>In the device</dt><dd>Type “each” in a text frame of its own, styled as it should print, and tag the frame Unit in InDesign&#39;s Tags panel (Link a text frame to a brief column, below). Tag the whole frame, not a run of its text.</dd></div><div><dt>On the page</dt><dd>Each product&#39;s Unit replaces “each”, in the frame&#39;s styles: “$12.50 each”, “$4.99 per kg”. A product whose Unit cell is blank leaves the frame empty, and the panel names it.</dd></div><div><dt>Any column</dt><dd>The same works for any column of the brief: name the tag for the column&#39;s header. A tag that names no column is left as you typed it.</dd></div></dl>
+      <dl class="hp-big-points"><div><dt>In the brief</dt><dd>A column headed Unit, holding whatever goes under each product&#39;s price, such as “each”, “per kg” or “per 100 g”.</dd></div><div><dt>In the device</dt><dd>Type “each” in a text frame of its own, styled as it should print, and tag the frame Unit in InDesign&#39;s Tags panel (Link a text frame to a brief column, below). Tag the whole frame, not a run of its text.</dd></div><div><dt>On the page</dt><dd>Each product&#39;s Unit replaces “each”, in the frame&#39;s styles: “$12.50 each”, “$4.99 per kg”. A product whose Unit cell is blank leaves the frame empty, and the panel names the product.</dd></div><div><dt>Any column</dt><dd>This works for any column of the brief. Name the tag after the column&#39;s header. A frame whose tag names no column is left as you typed it.</dd></div></dl>
     </li>
     <li class="hp-item hp-wide reveal" id="help-price-tags">
       <h4 class="hp-q">Link a text frame to a brief column</h4>
-      <ol class="hp-steps"><li>In the price device&#39;s file, put the words to be replaced, per kg say, in a text frame of their own, styled as they should print.</li><li>Open Window ▸ Utilities ▸ Tags, choose New Tag from the panel&#39;s menu and name it as the brief&#39;s column header: Unit. Case does not matter; a tag cannot hold a space, so a column headed Unit of measure takes the tag Unit_of_measure.</li><li>With the Selection tool, select the text frame and click the tag in the Tags panel. View ▸ Structure ▸ Show Tagged Frames colours a tagged frame, so you can see it took.</li><li>Save the file in the overlays folder or a price set. The next Build reads it again.</li><li>Each product&#39;s value in that column replaces the frame&#39;s text, in the frame&#39;s styles. A blank cell leaves the frame empty; a tag that names no column is left as you typed it, and the panel says so.</li><li>The price itself needs no tag. If the panel reads a device&#39;s price wrongly, tag it the same way: the whole frame price, or select its digits with the Type tool and tag them dollars and cents.</li></ol>
+      <ol class="hp-steps"><li>In the price device&#39;s file, put the words to be replaced, such as per kg, in a text frame of their own, styled as they should print.</li><li>Open Window ▸ Utilities ▸ Tags, choose New Tag from the panel&#39;s menu and name it after the brief&#39;s column header, for example Unit. Case does not matter. A tag cannot hold a space, so a column headed Unit of measure takes the tag Unit_of_measure.</li><li>With the Selection tool, select the text frame and click the tag in the Tags panel. View ▸ Structure ▸ Show Tagged Frames colours a tagged frame, so you can check the tag was applied.</li><li>Save the file in the overlays folder or a price set. The next Build reads it again.</li><li>Each product&#39;s value in that column replaces the frame&#39;s text, in the frame&#39;s styles. A blank cell leaves the frame empty. A frame whose tag names no column is left as you typed it, and the panel says so.</li><li>The price itself needs no tag. If the panel reads a device&#39;s price wrongly, tag it the same way. Tag the whole frame price, or select the digits with the Type tool and tag them dollars and cents.</li></ol>
     </li>
   </ul>
 </div>
@@ -336,8 +336,8 @@
 <section class="section theme-light" id="how">
   <div class="container container-wide">
     <div class="section-head reveal"><span class="section-index">02</span><span class="label">How it works</span></div>
-    <h2 class="t-l section-title pt-heading reveal">From brief to catalogue, and back</h2>
-    <p class="pt-intro reveal">How Automated Assemblr turns an Excel brief and your folders of images into catalogue pages, and keeps the two in step.</p>
+    <h2 class="t-l section-title pt-heading reveal">How the brief becomes catalogue pages</h2>
+    <p class="pt-intro reveal">Automated Assemblr builds catalogue pages from an Excel brief and your folders of images, and keeps the brief and the pages in step.</p>
     <ol class="hw-steps">
   <li class="hw-step hw-step-wide reveal">
     <div class="hw-art theme-light" aria-hidden="true">
@@ -370,7 +370,7 @@
 </div>
 </div>
     <h3 class="hw-name"><span class="hw-num">01</span>Built from your brief</h3>
-    <p class="hw-text">The Excel brief is the catalogue, one row a product. Each product&#39;s images are found in your folders by the code in the file or folder name, or by the product&#39;s name, a near match marked Check for you to confirm, and laid out in its cell; its copy is written from the brief&#39;s columns, in your paragraph styles. Product and row stay tied: an edit on either side, a new price in the brief or a renamed product on the page, is listed in Changes, to take whichever way you choose.</p>
+    <p class="hw-text">The Excel brief holds the catalogue, one row per product. Assemblr finds each product&#39;s images in your folders by the product code in the file or folder name, or by the product&#39;s name. A near match is marked Check for you to confirm. The images are laid out in the product&#39;s cell, and its copy is written from the brief&#39;s columns in your paragraph styles. Each product stays linked to its row. An edit on either side, such as a new price in the brief or a renamed product on the page, is listed in Changes, and you choose which way it goes.</p>
   </li>
   <li class="hw-step reveal">
     <div class="hw-art theme-light" aria-hidden="true">
@@ -447,8 +447,8 @@
 </div></div></div>
 </div>
 </div>
-    <h3 class="hw-name"><span class="hw-num">02</span>Pages on a live grid or no grid</h3>
-    <p class="hw-text">Every page is built on a grid: products across and down, and the gap between them, set in Setup ▸ Pages. Change it and Apply changes builds the pages again in one undo step, the products flowing on in the brief&#39;s order. Cells can be joined, across and down: here the Party pack takes the width of the page, Sparkling water two cells across and two down, and Lemon soda two across, and the products round them flow on. On Auto a short page gets a smaller grid, and a page break starts a new page wherever a column of the brief changes. Set a page to Free and it is yours to arrange: each product is placed once and never moved again, and its images are still laid out for its cell, wherever you put it and whatever its size.</p>
+    <h3 class="hw-name"><span class="hw-num">02</span>Pages on a grid, or arranged by hand</h3>
+    <p class="hw-text">Every page is built on a grid. Set the number of products across and down, and the gap between them, in Setup ▸ Pages. Change the grid and Apply changes builds the pages again in one undo step, with the products flowing on in the brief&#39;s order. Cells can be joined across and down. Here the Party pack takes the width of the page, Sparkling water takes two cells across and two down, and Lemon soda takes two across. The products around them flow on. On Auto, a short page gets a smaller grid. A page break starts a new page wherever the value in a chosen column of the brief changes. Set a page to Free and you arrange it yourself. Each product is placed once and never moved again. Its images are still laid out for its cell, wherever you put it and whatever size you make it.</p>
   </li>
   <li class="hw-step reveal">
     <div class="hw-art theme-light" aria-hidden="true">
@@ -466,8 +466,8 @@
 </ul>
 </div>
 </div>
-    <h3 class="hw-name"><span class="hw-num">03</span>Products managed by Assemblr layout engine</h3>
-    <p class="hw-text">Each product is a cell: an image area over its copy. In the image area Assemblr&#39;s layout engine arranges the images by what you can see in them, in Line-up, Grid, Mosaic, Pins or Puzzle, and Copy fitting gives the copy the room it needs and the image area the rest. Badges and prices go on its corners, each price written into your own price design. Drag an image into a cell and it joins the product, arranged with the rest; copy you edit on the page is kept until you choose to overwrite it. <a class="hw-link" href="https://monochromesystems.github.io/assemblr-help/">More on Assemblr&nbsp;›</a></p>
+    <h3 class="hw-name"><span class="hw-num">03</span>Products laid out by Assemblr&#39;s layout engine</h3>
+    <p class="hw-text">Each product is a cell, with an image area above its copy. In the image area, Assemblr&#39;s layout engine arranges the images by what is visible in them, in Line-up, Grid, Mosaic, Pins or Puzzle. Copy fitting gives the copy the room it needs and the image area the rest. Badges and price devices go on the cell&#39;s corners, and each price is written into a price device you designed. Drag an image into a cell and it joins the product and is arranged with its other images. Copy you edit on the page is kept until you choose to overwrite it. <a class="hw-link" href="https://monochromesystems.github.io/assemblr-help/">More on Assemblr&nbsp;›</a></p>
   </li>
   <li class="hw-step reveal">
     <div class="hw-art theme-light" aria-hidden="true">
@@ -526,8 +526,8 @@
 </ul>
 </div>
 </div>
-    <h3 class="hw-name"><span class="hw-num">04</span>Inside your margins, with inserts</h3>
-    <p class="hw-text">The grid fills each page inside its margins, inside and outside swapped on facing pages, on the parent pages you choose. Anything that is not a product goes in as an insert: an InDesign file, a PDF, any image InDesign places, or a table filled from its own sheet and styled by a design you draw. It takes a full page, with or without bleed, half or a quarter of one, or any block of cells; it keeps its place in the product order or is pinned to a page, and the products flow round it. The panel tells you what size to make the file.</p>
+    <h3 class="hw-name"><span class="hw-num">04</span>Margins, parent pages and inserts</h3>
+    <p class="hw-text">The grid fills each page inside its margins, with inside and outside swapped on facing pages, on the parent pages you choose. Anything that is not a product goes in as an insert: an InDesign file, a PDF, any image InDesign can place, or a table filled from its own sheet and styled by a design you draw. An insert takes a full page (with or without bleed), a half or quarter page, or any block of cells. It keeps its place in the product order or is pinned to a page, and the products flow around it. The panel tells you what size to make the file.</p>
   </li>
   <li class="hw-step reveal">
     <div class="hw-art theme-light" aria-hidden="true">
@@ -570,7 +570,7 @@
 </div>
 </div>
     <h3 class="hw-name"><span class="hw-num">05</span>The product list</h3>
-    <p class="hw-text">Every product in the brief, in page order. Drag a product to move it: the pages are built again in the new order, and Changes lists how it now differs from the spreadsheet. Or work inside a product: drag its images to change their order, drag one in from another product or from the files no product matched, take one out with × or add one with +. ¶ starts a new page before a product, and + adds an insert after it.</p>
+    <p class="hw-text">The list shows every product in the brief, in page order. Drag a product to move it. The pages are built again in the new order, and Changes lists how the order now differs from the brief. You can also work inside a product. Drag its images to change their order, or drag one in from another product or from the files no product matched. Take an image out with × or add one with +. ¶ starts a new page before a product, and + adds an insert after it.</p>
   </li>
 </ol>
 
@@ -581,12 +581,12 @@
   <div class="container container-wide">
     <div class="section-head reveal"><span class="section-index">03</span><span class="label"></span></div>
     <h2 class="t-l section-title pt-heading reveal"></h2>
-    <p class="pt-intro reveal">Automated Assemblr works from one panel in InDesign, in three tabs: Setup, Products and Changes. In each, pick a tile to see its settings; each number says what a setting does, and the note beside it lights up as you point at it.</p>
+    <p class="pt-intro reveal">Automated Assemblr works from one panel in InDesign, with three tabs: Setup, Products and Changes. Pick a tile in any tab to see its settings. Each number says what a setting does, and the note beside it lights up as you point at it.</p>
     
 <section class="pt-group reveal" aria-labelledby="pt-setup">
   <div class="pt-group-head">
     <h3 class="pt-group-name" id="pt-setup">Setup</h3>
-    <p class="pt-group-text">Where the catalogue comes from, and how its pages are built. <span class="pt-hint">Pick a tile to see its settings.</span></p>
+    <p class="pt-group-text">Sets where the catalogue comes from and how its pages are built. <span class="pt-hint">Pick a tile to see its settings.</span></p>
   </div>
   <div class="pt" data-panel-tour>
     <div class="pt-side">
@@ -698,44 +698,44 @@
       </div>
     </div>
     <div class="pt-text">
-      <div class="pt-explain" data-view-notes="folders"><h4 class="t-s pt-name">Folders</h4><p class="pt-summary">Where the catalogue comes from: the brief, the folders of images, and how each file finds its product.</p>
+      <div class="pt-explain" data-view-notes="folders"><h4 class="t-s pt-name">Folders</h4><p class="pt-summary">Links the brief and the image folders, and sets how each file finds its product.</p>
         <ol class="pt-notes">
-          <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">Brief</p><p class="pt-note-text">The Excel workbook the catalogue is built from, one row per product. Change… picks another; anything it cannot use is listed as a warning.</p></div></li>
-          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Image folders</p><p class="pt-note-text">The folders your packshots live in, and how many files each holds. A folder that has gone missing says so.</p></div></li>
+          <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">Brief</p><p class="pt-note-text">Shows the Excel brief the catalogue is built from, one row per product. Change… picks another workbook. Anything in it the plugin cannot use is listed as a warning.</p></div></li>
+          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Image folders</p><p class="pt-note-text">Lists the folders your images are in, and how many files each holds. A folder that has gone missing is marked as missing.</p></div></li>
           <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">Analyse links</p><p class="pt-note-text">Reads the brief and the folders again and matches the files to products. Nothing on the pages changes until you apply it in Changes.</p></div></li>
-          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Place images</p><p class="pt-note-text">Puts every product&#39;s images on its page and re-fits them all, in steps you can stop; one undo step. Update reads changed files again and re-fits their products, leaving locked or turned images as they are.</p></div></li>
-          <li class="pt-note" data-note="5"><span class="pt-num" aria-hidden="true">5</span><div><p class="pt-note-name">Matching</p><p class="pt-note-text">The ways a file can find its product: the product code in the file name, in the folder name, or the product&#39;s name. Untick a way to stop using it, and drag to choose which one wins when two disagree: the higher one decides.</p></div></li>
-          <li class="pt-note" data-note="6"><span class="pt-num" aria-hidden="true">6</span><div><p class="pt-note-name">Low confidence</p><p class="pt-note-text">Files matched only by a name that looks alike are placed but marked Check, so you confirm each one on its product.</p></div></li>
-          <li class="pt-note" data-note="7"><span class="pt-num" aria-hidden="true">7</span><div><p class="pt-note-name">Prefer file types</p><p class="pt-note-text">When one image is in the folders as both a PSD and a TIF, keep only this type.</p></div></li>
+          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Place images</p><p class="pt-note-text">Places every product&#39;s images on its page and re-fits them all, in steps you can stop, as one undo step. Update reads changed files again and re-fits their products. Locked or rotated images are left as they are.</p></div></li>
+          <li class="pt-note" data-note="5"><span class="pt-num" aria-hidden="true">5</span><div><p class="pt-note-name">Matching</p><p class="pt-note-text">Sets the ways a file can find its product: by the product code in the file name or the folder name, or by the product&#39;s name. Untick a way to stop using it. When two ways disagree, the higher one in the list wins, so drag them into the order you want.</p></div></li>
+          <li class="pt-note" data-note="6"><span class="pt-num" aria-hidden="true">6</span><div><p class="pt-note-name">Low confidence</p><p class="pt-note-text">Files matched only by a similar name are placed but marked Check, so you can confirm each one on its product.</p></div></li>
+          <li class="pt-note" data-note="7"><span class="pt-num" aria-hidden="true">7</span><div><p class="pt-note-name">Prefer file types</p><p class="pt-note-text">When the same image is in the folders as both a PSD and a TIF, only the type chosen here is used.</p></div></li>
         </ol>
       </div>
-      <div class="pt-explain" data-view-notes="pages" hidden><h4 class="t-s pt-name">Pages</h4><p class="pt-summary">How the pages are built: the grid each page gets, how many pages, their parent pages and where a new page starts.</p>
+      <div class="pt-explain" data-view-notes="pages" hidden><h4 class="t-s pt-name">Pages</h4><p class="pt-summary">Sets how the pages are built: the grid on each page, the number of pages, their parent pages and where a new page starts.</p>
         <ol class="pt-notes">
-          <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">Grid: Auto or Consistent</p><p class="pt-note-text">Auto: a page with fewer products gets a smaller grid, its cells the shape of a full page&#39;s. Consistent: every page gets the grid you set, and a short page keeps its empty slots.</p></div></li>
-          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Across, Down and Gap</p><p class="pt-note-text">Products across and down a page, and the space between them in points. Left on auto, they follow from the number of products.</p></div></li>
-          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">Copy height</p><p class="pt-note-text">The share of each cell the copy takes, under its image area.</p></div></li>
-          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Page count</p><p class="pt-note-text">How many pages the catalogue runs to (auto gives it as many as it needs), and the page it starts on.</p></div></li>
-          <li class="pt-note" data-note="5"><span class="pt-num" aria-hidden="true">5</span><div><p class="pt-note-name">Masters</p><p class="pt-note-text">The parent pages the left-hand and right-hand pages are built on.</p></div></li>
-          <li class="pt-note" data-note="6"><span class="pt-num" aria-hidden="true">6</span><div><p class="pt-note-name">Page breaks</p><p class="pt-note-text">A brief column, a category say: a new page starts wherever its value changes.</p></div></li>
-          <li class="pt-note" data-note="7"><span class="pt-num" aria-hidden="true">7</span><div><p class="pt-note-name">Apply changes</p><p class="pt-note-text">The settings are a draft until Apply changes builds the pages with them, in one undo step. Discard throws them away; nothing is written.</p></div></li>
+          <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">Grid: Auto or Consistent</p><p class="pt-note-text">Auto gives a page with fewer products a smaller grid, with cells the same shape as a full page&#39;s. Consistent gives every page the grid you set, and a short page keeps its empty slots.</p></div></li>
+          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Across, Down and Gap</p><p class="pt-note-text">Sets the number of products across and down a page, and the space between them in points. Left on auto, Across and Down are worked out from the number of products.</p></div></li>
+          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">Copy height</p><p class="pt-note-text">Sets the share of each cell the copy takes, under its image area.</p></div></li>
+          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Page count</p><p class="pt-note-text">Sets how many pages the catalogue runs to, and the page it starts on. On auto, it gets as many pages as it needs.</p></div></li>
+          <li class="pt-note" data-note="5"><span class="pt-num" aria-hidden="true">5</span><div><p class="pt-note-name">Masters</p><p class="pt-note-text">Sets the parent pages that left-hand and right-hand pages are built on.</p></div></li>
+          <li class="pt-note" data-note="6"><span class="pt-num" aria-hidden="true">6</span><div><p class="pt-note-name">Page breaks</p><p class="pt-note-text">Choose a column of the brief, such as a category. A new page starts wherever its value changes.</p></div></li>
+          <li class="pt-note" data-note="7"><span class="pt-num" aria-hidden="true">7</span><div><p class="pt-note-name">Apply changes</p><p class="pt-note-text">The settings are a draft until Apply changes builds the pages with them, in one undo step. Discard throws them away without writing anything.</p></div></li>
         </ol>
       </div>
-      <div class="pt-explain" data-view-notes="copy" hidden><h4 class="t-s pt-name">Copy</h4><p class="pt-summary">What each product&#39;s copy says, from which columns of the brief, in which paragraph styles.</p>
+      <div class="pt-explain" data-view-notes="copy" hidden><h4 class="t-s pt-name">Copy</h4><p class="pt-summary">Sets what each product&#39;s copy says, which columns of the brief it comes from and which paragraph styles it uses.</p>
         <ol class="pt-notes">
           <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">Copy fitting</p><p class="pt-note-text">Off: every cell splits at the same height, whatever its text. Per product: each cell&#39;s copy takes what it needs and the image area gets the rest. Match the row: every cell in a row takes the row&#39;s largest copy height, so the captions all start level, as most printed catalogues do.</p></div></li>
-          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Fields</p><p class="pt-note-text">A row for each column of the brief: tick it to show it in the copy, and use the arrows to change the order.</p></div></li>
-          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">How each field starts</p><p class="pt-note-text">On a new paragraph, after a line break, a space or a tab, in the paragraph style you choose.</p></div></li>
-          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Paragraph styles</p><p class="pt-note-text">Automatic finds the document&#39;s style with the field&#39;s name. With none, Create style makes it; a style found by a near name waits for you to confirm it.</p></div></li>
+          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Fields</p><p class="pt-note-text">Lists a row for each column of the brief. Tick a row to show that column in the copy, and use the arrows to change the order.</p></div></li>
+          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">How each field starts</p><p class="pt-note-text">Sets whether each field starts on a new paragraph or after a line break, a space or a tab, and the paragraph style it uses.</p></div></li>
+          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Paragraph styles</p><p class="pt-note-text">Automatic finds the document&#39;s paragraph style with the field&#39;s name. If there is none, Create style makes it. A style found by a similar name waits for you to confirm it.</p></div></li>
           <li class="pt-note" data-note="5"><span class="pt-num" aria-hidden="true">5</span><div><p class="pt-note-name">Leave out empty fields</p><p class="pt-note-text">A product with nothing in a column gets no empty line for it.</p></div></li>
           <li class="pt-note" data-note="6"><span class="pt-num" aria-hidden="true">6</span><div><p class="pt-note-name">Write copy</p><p class="pt-note-text">Writes every product&#39;s copy from the brief. Copy edited in InDesign is counted and kept until you choose to overwrite it.</p></div></li>
         </ol>
       </div>
-      <div class="pt-explain" data-view-notes="tables" hidden><h4 class="t-s pt-name">Tables</h4><p class="pt-summary">Price lists and spec tables, each filled from its own sheet and styled by a design you draw in InDesign.</p>
+      <div class="pt-explain" data-view-notes="tables" hidden><h4 class="t-s pt-name">Tables</h4><p class="pt-summary">Fills price lists and spec tables, each from its own sheet, and styles them by a design you draw in InDesign.</p>
         <ol class="pt-notes">
-          <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">Table Setup</p><p class="pt-note-text">A parent page that holds your table designs. Show turns the window to it, and the panel warns you if it is applied to a page that prints.</p></div></li>
-          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Designs</p><p class="pt-note-text">A table drawn in InDesign, a header row and one sample row: its columns, styles and strokes are what every table that follows it gets. Use selection as design adds the one you have selected.</p></div></li>
+          <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">Table Setup</p><p class="pt-note-text">Names the parent page that holds your table designs. Show takes you to it, and the panel warns you if this parent page is applied to a page that prints.</p></div></li>
+          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Designs</p><p class="pt-note-text">Lists your table designs. A design is a table drawn in InDesign with a header row and one sample row. Every table that follows it gets its columns, styles and strokes. Use selection as design adds the table you have selected.</p></div></li>
           <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">Tables</p><p class="pt-note-text">Each table comes from a sheet and follows a design. The panel lists the cells that change and the rows added or removed, and keeps any cell you edited by hand.</p></div></li>
-          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Problems, said plainly</p><p class="pt-note-text">A design with no sample row, or a table taller than its frame, is named with what to do about it.</p></div></li>
+          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Problems</p><p class="pt-note-text">The panel names a design with no sample row, or a table taller than its frame, and says what to do about it.</p></div></li>
           <li class="pt-note" data-note="5"><span class="pt-num" aria-hidden="true">5</span><div><p class="pt-note-name">Refresh tables</p><p class="pt-note-text">Reads every table&#39;s sheet and design and lists what would change. Nothing changes until you apply it, table by table or all at once.</p></div></li>
         </ol>
       </div>
@@ -745,7 +745,7 @@
 <section class="pt-group reveal" aria-labelledby="pt-products">
   <div class="pt-group-head">
     <h3 class="pt-group-name" id="pt-products">Products</h3>
-    <p class="pt-group-text">Each product: how its images are laid out, what goes on its corners, and where it stands in the catalogue. <span class="pt-hint">Pick a tile to see its settings.</span></p>
+    <p class="pt-group-text">Sets how each product&#39;s images are laid out and what goes on its corners, and shows where it stands in the catalogue. <span class="pt-hint">Pick a tile to see its settings.</span></p>
   </div>
   <div class="pt" data-panel-tour>
     <div class="pt-side">
@@ -854,41 +854,41 @@
       </div>
     </div>
     <div class="pt-text">
-      <div class="pt-explain" data-view-notes="layout"><h4 class="t-s pt-name">Layout</h4><p class="pt-summary">How the selected product&#39;s images are arranged, by what you can see in them rather than their frames: Assemblr&#39;s layout engine, inside the catalogue.</p>
+      <div class="pt-explain" data-view-notes="layout"><h4 class="t-s pt-name">Layout</h4><p class="pt-summary">Sets how Assemblr&#39;s layout engine arranges the selected product&#39;s images. The engine works from what is visible in each image and ignores its frame.</p>
         <ol class="pt-notes">
-          <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">The drawing</p><p class="pt-note-text">The product drawn over the panel: drag the line&#39;s end to turn the row and set its size, and pick a dot to choose the edge or corner the product holds to.</p></div></li>
-          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Arrangements</p><p class="pt-note-text">Line-up, Grid, Mosaic, Pins and Puzzle: five ways to lay out a product&#39;s images, each fitted to the visible subject of every image.</p></div></li>
-          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">The product</p><p class="pt-note-text">The product the selection is in, its page, and its images. Select them all picks every frame it is made of.</p></div></li>
-          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Settings</p><p class="pt-note-text">Align images, Angle, Size, Scale, Bleed, Perspective and a clipping path from each image&#39;s transparency, as each arrangement has them.</p></div></li>
-          <li class="pt-note" data-note="5"><span class="pt-num" aria-hidden="true">5</span><div><p class="pt-note-name">Apply to page, Apply to all</p><p class="pt-note-text">Give every product on this page, or in the catalogue, these settings.</p></div></li>
-          <li class="pt-note" data-note="6"><span class="pt-num" aria-hidden="true">6</span><div><p class="pt-note-name">Re-fit and Reset</p><p class="pt-note-text">Re-fit lays the images out again. Reset puts the product back to the arrangement&#39;s automatic settings, hand rotation cleared and locks released, in one undo step; Reset page and Reset all do the same wider.</p></div></li>
-          <li class="pt-note" data-note="7"><span class="pt-num" aria-hidden="true">7</span><div><p class="pt-note-name">Images</p><p class="pt-note-text">The product&#39;s images in order. Drag to reorder, click one to leave it out, + to add one; Unassigned files lists the files that matched no product.</p></div></li>
+          <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">The drawing</p><p class="pt-note-text">Shows the product drawn over the panel. Drag the end of the line to rotate the row and set its size. Click a dot to choose the edge or corner the product holds to.</p></div></li>
+          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Arrangements</p><p class="pt-note-text">Line-up, Grid, Mosaic, Pins and Puzzle are five ways to lay out a product&#39;s images. Each one fits to the visible subject of every image.</p></div></li>
+          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">The product</p><p class="pt-note-text">Shows the product the selection is in, its page and its images. Select them all selects every frame the product is made of.</p></div></li>
+          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Settings</p><p class="pt-note-text">Lists the settings each arrangement has, from Align images, Angle, Size, Scale, Bleed, Perspective and a clipping path made from each image&#39;s transparency.</p></div></li>
+          <li class="pt-note" data-note="5"><span class="pt-num" aria-hidden="true">5</span><div><p class="pt-note-name">Apply to page, Apply to all</p><p class="pt-note-text">Gives every product on this page, or in the whole catalogue, these settings.</p></div></li>
+          <li class="pt-note" data-note="6"><span class="pt-num" aria-hidden="true">6</span><div><p class="pt-note-name">Re-fit and Reset</p><p class="pt-note-text">Re-fit lays the images out again. Reset puts the product back to the arrangement&#39;s automatic settings in one undo step, clearing rotation done by hand and releasing locks. Reset page and Reset all do the same for the page or the whole catalogue.</p></div></li>
+          <li class="pt-note" data-note="7"><span class="pt-num" aria-hidden="true">7</span><div><p class="pt-note-name">Images</p><p class="pt-note-text">Lists the product&#39;s images in order. Drag to reorder them, click one to leave it out, or click + to add one. Unassigned files lists the files that matched no product.</p></div></li>
         </ol>
       </div>
-      <div class="pt-explain" data-view-notes="overlays" hidden><h4 class="t-s pt-name">Overlays</h4><p class="pt-summary">Badges and prices on the corners of a product, from a folder of artwork or a column of the brief.</p>
+      <div class="pt-explain" data-view-notes="overlays" hidden><h4 class="t-s pt-name">Overlays</h4><p class="pt-summary">Puts badges and price devices on a product&#39;s corners, from a folder of artwork or a column of the brief.</p>
         <ol class="pt-notes">
-          <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">Where it applies</p><p class="pt-note-text">One product, wherever it goes; a range of pages; or the whole document. A product follows the document until you give it its own.</p></div></li>
-          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Corner and Stack</p><p class="pt-note-text">Pick a corner, on the drawing or here; its overlays stack across or down from it. Click another corner to move them there, or swap them with what is there.</p></div></li>
-          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">Sources</p><p class="pt-note-text">What goes on the corner: badges from the overlays folder, or + Column, a column of the brief whose cells name what goes there.</p></div></li>
-          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Size and spacing</p><p class="pt-note-text">Gap and Inset X and Y in points, or scaled with the product by Resize scale; each overlay fitted into a Max width by Max height, in points or as a share of the product.</p></div></li>
-          <li class="pt-note" data-note="5"><span class="pt-num" aria-hidden="true">5</span><div><p class="pt-note-name">Overlays folder</p><p class="pt-note-text">One folder of artwork: badges, and price devices, InDesign files the plugin writes each product&#39;s price into.</p></div></li>
-          <li class="pt-note" data-note="6"><span class="pt-num" aria-hidden="true">6</span><div><p class="pt-note-name">Price sets</p><p class="pt-note-text">The overlays folder holds one price set; each additional price device style is a folder of its own, Set 1, Set 2. Each corner with a price chooses the set it is drawn from.</p></div></li>
+          <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">Where it applies</p><p class="pt-note-text">Sets whether a corner&#39;s settings apply to one product (wherever it goes), a range of pages or the whole document. A product follows the document&#39;s settings until you give it its own.</p></div></li>
+          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Corner and Stack</p><p class="pt-note-text">Pick a corner on the drawing or here. Its overlays stack across or down from the corner. Click another corner to move them there, or to swap them with the overlays already there.</p></div></li>
+          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">Sources</p><p class="pt-note-text">Sets what goes on the corner: badges from the overlays folder, or a column of the brief (+ Column) whose cells name what goes there.</p></div></li>
+          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Size and spacing</p><p class="pt-note-text">Set Gap and Inset X and Y in points, or let Resize scale scale them with the product. Each overlay is fitted into a Max width by Max height, in points or as a share of the product.</p></div></li>
+          <li class="pt-note" data-note="5"><span class="pt-num" aria-hidden="true">5</span><div><p class="pt-note-name">Overlays folder</p><p class="pt-note-text">Links one folder of artwork that holds badges and price devices. The price devices are InDesign files the plugin writes each product&#39;s price into.</p></div></li>
+          <li class="pt-note" data-note="6"><span class="pt-num" aria-hidden="true">6</span><div><p class="pt-note-name">Price sets</p><p class="pt-note-text">The overlays folder holds one price set. Each additional style of price device is a folder of its own, listed as Set 1, Set 2 and so on. Each corner with a price chooses the set its device is drawn from.</p></div></li>
         </ol>
       </div>
-      <div class="pt-explain" data-view-notes="catalogue" hidden><h4 class="t-s pt-name">Catalogue</h4><p class="pt-summary">Every product in the brief, in page order, each with where it stands.</p>
+      <div class="pt-explain" data-view-notes="catalogue" hidden><h4 class="t-s pt-name">Catalogue</h4><p class="pt-summary">Lists every product in the brief in page order, with where each one stands.</p>
         <ol class="pt-notes">
           <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">No image</p><p class="pt-note-text">Shows only the products still waiting for an image.</p></div></li>
-          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Order</p><p class="pt-note-text">Drag a product to reorder it: the pages are rebuilt in the new order, and Changes lists the difference from the spreadsheet.</p></div></li>
-          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">Where each product stands</p><p class="pt-note-text">Its page, its images placed or added, copy overset, an image changed on disk (Update), on the pasteboard, or edited in InDesign.</p></div></li>
-          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Check</p><p class="pt-note-text">A file matched only by a name that looks alike waits on its product until you say Looks right or Not this product.</p></div></li>
-          <li class="pt-note" data-note="5"><span class="pt-num" aria-hidden="true">5</span><div><p class="pt-note-name">Breaks and inserts</p><p class="pt-note-text">¶ starts a new page before a product; + adds an insert after it, an advert or a table, from an INDD, a PDF or an image.</p></div></li>
+          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Order</p><p class="pt-note-text">Drag a product to move it. The pages are rebuilt in the new order, and Changes lists how the order differs from the brief.</p></div></li>
+          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">Where each product stands</p><p class="pt-note-text">Each product shows its page and its images placed or added. It is also marked when its copy is overset, an image has changed on disk (Update), it is on the pasteboard, or it was edited in InDesign.</p></div></li>
+          <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">Check</p><p class="pt-note-text">A file matched only by a similar name waits on its product until you click Looks right or Not this product.</p></div></li>
+          <li class="pt-note" data-note="5"><span class="pt-num" aria-hidden="true">5</span><div><p class="pt-note-name">Breaks and inserts</p><p class="pt-note-text">¶ starts a new page before a product. + adds an insert after it, such as an advert or a table, from an INDD, a PDF or an image.</p></div></li>
         </ol>
       </div>
-      <div class="pt-explain" data-view-notes="grid" hidden><h4 class="t-s pt-name">Grid</h4><p class="pt-summary">The selected page&#39;s grid, and how many slots each product on it takes.</p>
+      <div class="pt-explain" data-view-notes="grid" hidden><h4 class="t-s pt-name">Grid</h4><p class="pt-summary">Shows the selected page&#39;s grid and sets how many slots each product on it takes.</p>
         <ol class="pt-notes">
           <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">Managed or Free</p><p class="pt-note-text">Managed: the plugin keeps this page on its grid. Free: you arrange the page, and the plugin leaves it alone.</p></div></li>
-          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">The page</p><p class="pt-note-text">The page drawn as its grid, each product in its slots. Set… opens this page&#39;s own grid and spacing in Setup ▸ Pages.</p></div></li>
-          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">Size</p><p class="pt-note-text">Give a product more than one slot, a 2 × 2 hero say, and the products round it flow on. One slot puts it back.</p></div></li>
+          <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">The page</p><p class="pt-note-text">Shows the page as its grid, with each product in its slots. Set… opens this page&#39;s own grid and spacing in Setup ▸ Pages.</p></div></li>
+          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">Size</p><p class="pt-note-text">Give a product more than one slot, such as a 2 × 2 hero, and the products around it flow on. Set it to one slot to put it back.</p></div></li>
         </ol>
       </div>
     </div>
@@ -897,7 +897,7 @@
 <section class="pt-group reveal" aria-labelledby="pt-changes">
   <div class="pt-group-head">
     <h3 class="pt-group-name" id="pt-changes">Changes</h3>
-    <p class="pt-group-text">The brief and the document kept in step both ways: what changed on which side, and which way each change should go.</p>
+    <p class="pt-group-text">Keeps the brief and the document in step both ways. It shows what changed on which side, and you choose which way each change goes.</p>
   </div>
   <div class="pt" data-panel-tour>
     <div class="pt-side">
@@ -940,13 +940,13 @@
     <div class="pt-text">
       <div class="pt-explain" data-view-notes="changes">
         <ol class="pt-notes">
-          <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">Check</p><p class="pt-note-text">Reads the spreadsheet again and compares it with the pages; the tables&#39; sheets are read too.</p></div></li>
+          <li class="pt-note" data-note="1"><span class="pt-num" aria-hidden="true">1</span><div><p class="pt-note-name">Check</p><p class="pt-note-text">Reads the brief again and compares it with the pages. The tables&#39; sheets are read too.</p></div></li>
           <li class="pt-note" data-note="2"><span class="pt-num" aria-hidden="true">2</span><div><p class="pt-note-name">Apply spreadsheet changes</p><p class="pt-note-text">Brings every edit made in the brief into the document.</p></div></li>
-          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">Write InDesign edits to spreadsheet</p><p class="pt-note-text">Copies edits made on the pages, a renamed product or a new price, back to the brief. Write everything lets the document win.</p></div></li>
+          <li class="pt-note" data-note="3"><span class="pt-num" aria-hidden="true">3</span><div><p class="pt-note-name">Write InDesign edits to spreadsheet</p><p class="pt-note-text">Copies edits made on the pages, such as a renamed product or a new price, back to the brief. With Write everything, the document wins wherever the two differ.</p></div></li>
           <li class="pt-note" data-note="4"><span class="pt-num" aria-hidden="true">4</span><div><p class="pt-note-name">One change at a time</p><p class="pt-note-text">Each difference shows both sides. Update document, Write to spreadsheet or Use spreadsheet takes it one way or the other, and × dismisses it until either side changes again.</p></div></li>
           <li class="pt-note" data-note="5"><span class="pt-num" aria-hidden="true">5</span><div><p class="pt-note-name">Changed in both</p><p class="pt-note-text">When the brief and the page both changed the same thing, both are shown and you choose.</p></div></li>
-          <li class="pt-note" data-note="6"><span class="pt-num" aria-hidden="true">6</span><div><p class="pt-note-name">Pages and images</p><p class="pt-note-text">Products not on the pages yet, an order that differs, a page that overflows, files that now match another product: each listed with what Apply will do.</p></div></li>
-          <li class="pt-note" data-note="7"><span class="pt-num" aria-hidden="true">7</span><div><p class="pt-note-name">When it cannot finish</p><p class="pt-note-text">It says why, and what to do: the brief is open in Excel, close it and try again.</p></div></li>
+          <li class="pt-note" data-note="6"><span class="pt-num" aria-hidden="true">6</span><div><p class="pt-note-name">Pages and images</p><p class="pt-note-text">Lists products not on the pages yet, an order that differs, a page that overflows and files that now match another product, each with what Apply will do.</p></div></li>
+          <li class="pt-note" data-note="7"><span class="pt-num" aria-hidden="true">7</span><div><p class="pt-note-name">When it cannot finish</p><p class="pt-note-text">It says why and what to do. If the brief is open in Excel, close it and try again.</p></div></li>
         </ol>
       </div>
     </div>
