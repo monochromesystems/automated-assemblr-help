@@ -901,7 +901,24 @@ a.tile:hover .tile-photo { --lift: 1.05; }
   isolation: isolate;
   text-align: center;
 }
-.home-hero .glyphs { z-index: -1; inset: auto 0 0 0; height: var(--hero-full); }
+/* Depth behind the glyphs: the sky darkens to black at the top. */
+.home-hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0) 60%);
+}
+/* The sphere itself, solid black, and a soft glow of atmosphere outside its limb only. Its circle is the horizon's
+   in glyphs.js: radius 0.8 (the page's data-glyphs) of the box's longer side, its top two thirds down the box. */
+.home-hero { container-type: inline-size; }
+.home-hero .glyphs {
+  z-index: -1; inset: auto 0 0 0; height: var(--hero-full);
+  --sphere-r: calc(0.8 * max(100cqw, var(--hero-full)));
+  background: radial-gradient(circle at 50% calc(var(--hero-full) * 0.667 + var(--sphere-r)),
+    #000 0, #000 calc(var(--sphere-r) - 70px),
+    rgba(0, 0, 0, 0.6) calc(var(--sphere-r) - 25px),
+    rgba(255, 255, 255, 0.06) calc(var(--sphere-r) + 30px),
+    rgba(255, 255, 255, 0.04) calc(var(--sphere-r) + 110px),
+    rgba(255, 255, 255, 0) calc(var(--sphere-r) + 280px));
+}
 .home-hero-content { padding: 96px 0 64px; }
 /* The marks of what the apps are made for, Figma, Adobe and Apple (Simple Icons, CC0; Adobe's from 9.21.0), over the tagline. */
 .home-platforms { display: flex; justify-content: center; align-items: center; gap: 30px; margin-top: 26px; }
@@ -928,14 +945,14 @@ a.tile:hover .tile-photo { --lift: 1.05; }
 .promo-visual {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  gap: 28px 48px;
+  gap: 28px 72px;
   justify-content: center;
   margin-block: auto;
   padding-block: 28px;
 }
 .promo-visual-single { grid-template-columns: auto; }
 /* Four products (Figma's) in one row; two by two on a phone. */
-.promo-visual:has(> li:nth-child(4)) { grid-template-columns: repeat(4, auto); gap: 28px 24px; }
+.promo-visual:has(> li:nth-child(4)) { grid-template-columns: repeat(4, auto); gap: 28px 52px; }
 @media (max-width: 734px) { .promo-visual:has(> li:nth-child(4)) { grid-template-columns: repeat(2, auto); gap: 28px 48px; } }
 .promo-product { display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .promo-icon .icon { --stroke: 1.25px; width: 72px; height: 72px; transition: transform 0.4s var(--ease-out); }
