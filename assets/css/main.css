@@ -1710,6 +1710,15 @@ a.tile:hover .tile-photo { --lift: 1.05; }
 
 /* A plugin's quick help (panel-help.njk, panels.js `help`) ---------------- */
 
+/* Further help, after the last card (more-help.njk): the support email, a line and a button. */
+.more-help { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-top: 56px; padding: 32px 36px; border-radius: var(--radius); background: var(--card); }
+.more-help-title { font-size: 24px; line-height: 1.2; letter-spacing: -0.015em; }
+.more-help-text p { max-width: 38em; margin-top: 8px; color: var(--fg-2); }
+.more-help .button { flex: none; }
+.more-help-text .more-help-mail { margin-top: 12px; font-size: 15px; color: var(--fg-3); }
+.more-help-mail a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 734px) { .more-help { flex-direction: column; align-items: flex-start; gap: 20px; padding: 24px; } }
+
 /* A help page of its own (layouts/help.njk): its hero, with room under it before the guide. */
 .hp-hero { padding-bottom: 80px; }
 @media (max-width: 734px) { .hp-hero { padding-bottom: 48px; } }
